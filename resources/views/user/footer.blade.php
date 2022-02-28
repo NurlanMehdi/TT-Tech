@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer_content">
             <div class="footer_content_item">
-                <a href="index.html" class="footer_logo">
+                <a href="{{route('dashboard')}}" class="footer_logo">
                     <img class="footer_logo--img" src="{{asset('views/images/TT_logo.svg')}}" alt="TT logo">
                 </a>
                 <ul class="footer_social">
@@ -47,22 +47,22 @@
                 <div class="footer_title">Contents</div>
                 <ul class="footer_content_item_cont">
                     <li class="footer_content_item_cont_item">
-                        <a href="about.html" class="footer_content_item_cont_item_link">About Us</a>
+                        <a href="{{route('about-page')}}" class="footer_content_item_cont_item_link">About Us</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="solutions.html" class="footer_content_item_cont_item_link">Solutions</a>
+                        <a href="{{route('solutions-page')}}" class="footer_content_item_cont_item_link">Solutions</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="news.html" class="footer_content_item_cont_item_link">News</a>
+                        <a href="{{route('news-page')}}" class="footer_content_item_cont_item_link">News</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="mobileApp.html" class="footer_content_item_cont_item_link">Mobile Application</a>
+                        <a href="{{route('mobile-app-page')}}" class="footer_content_item_cont_item_link">Mobile Application</a>
                     </li>
-                    <li class="footer_content_item_cont_item">
+                    <li style="display: none" class="footer_content_item_cont_item">
                         <a href="support.html" class="footer_content_item_cont_item_link">Support</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="contact.html" class="footer_content_item_cont_item_link">Contacts</a>
+                        <a href="{{route('contacts-page')}}" class="footer_content_item_cont_item_link">Contacts</a>
                     </li>
                 </ul>
             </div>
