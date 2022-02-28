@@ -5,18 +5,18 @@
         <div class="container">
             <ul class="pageBreadcrumb">
                 <li class="pageBreadcrumb_item">
-                    <a href="{{route('dashboard')}}" class="pageBreadcrumb_item_link">Homepage</a>
+                    <a href="{{route('dashboard')}}" class="pageBreadcrumb_item_link">{{__('language.homepage')}}</a>
                 </li>
                 <li class="pageBreadcrumb_item">
-                    <a class="pageBreadcrumb_item_link">About Us</a>
+                    <a class="pageBreadcrumb_item_link">{{__('language.aboutUs')}}</a>
                 </li>
             </ul>
             <div class="page_header">
                 <div class="page_header_head">
-                    About TT Technologies
+                    {{__('language.aboutTTT')}}
                 </div>
                 <div class="page_header_desc">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                    {{__('language.aboutUsDashboardContent2')}}
                 </div>
             </div>
         </div>

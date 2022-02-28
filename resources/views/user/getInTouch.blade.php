@@ -5,7 +5,7 @@
                 Learn more about our solutions
             </div>
             <div class="getInTouch_content_btn">
-                <a href="#" class="white_btn btn">
+                <a href="{{route('solutions-page')}}" class="white_btn btn">
                     Get in touch
                     <img src="{{asset('views/images/btn_right_arrow.svg')}}" alt="btn right arrow">
                 </a>
