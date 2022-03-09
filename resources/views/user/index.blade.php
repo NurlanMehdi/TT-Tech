@@ -83,16 +83,34 @@
             </div>
             <div class="misvis_content">
                 <div class="misvis_content_item">
-                    <div class="misvis_content_item_head section_title">{{__('language.mission')}}</div>
-                    <div class="misvis_content_item_desc section_text">
-                        {{__('language.missionText')}}
-                    </div>
+{{--                    <div class="misvis_content_item_body">--}}
+                        <div class="misvis_content_item_head section_title">{{__('language.mission')}}</div>
+                        <div class="misvis_content_item_image">
+                            <div class="box pd_t54">
+                                <div class="box_item">
+                                    <img src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" class="misvis_content_item_image--img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="misvis_content_item_desc section_text">
+                            {{__('language.missionText')}}
+                        </div>
+{{--                    </div>--}}
                 </div>
                 <div class="misvis_content_item">
-                    <div class="misvis_content_item_head section_title">{{__('language.vision')}}</div>
-                    <div class="misvis_content_item_desc section_text">
-                        {{__('language.visionText')}}
-                    </div>
+{{--                    <div class="misvis_content_item_body">--}}
+                        <div class="misvis_content_item_head section_title">{{__('language.vision')}}</div>
+                        <div class="misvis_content_item_image">
+                            <div class="box pd_t54">
+                                <div class="box_item">
+                                    <img src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" class="misvis_content_item_image--img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="misvis_content_item_desc section_text">
+                            {{__('language.visionText')}}
+                        </div>
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -101,9 +119,8 @@
     <div class="solutions">
         <div class="container">
             <div class="section_header">
-                <div class="solutions_header_head section_head">Our Solutions</div>
                 <div class="section_header_cont">
-                    <div class="solutions_header_title section_title">Delivering high end projects or both government and brands </div>
+                    <div class="solutions_header_head section_head">Our Solutions</div>
                     <a href="{{route('solutions-page')}}" class="btn">
                         See more
                         <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="blue arrow to right">

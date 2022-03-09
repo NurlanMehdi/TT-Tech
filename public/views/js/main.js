@@ -1,4 +1,4 @@
-// SEARCH 
+// SEARCH
 $(document).on('click','.header_content_body_search_link',function (e){
     e.preventDefault()
     $('.header_search_content_form_input').toggleClass('open');
@@ -38,26 +38,26 @@ $('.blogs_content').slick({
 })
 
 
-
-$('.news_content').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    infinite: true,
-    dots: false,
-    responsive: [
-        {
-            breakpoint: 992,
-            settings: {
-                centerMode: true,
-                centerPadding:'20px',
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite:true,
-                dots: false
-            }
-        },
-    ]
-})
+//
+// $('.news_content').slick({
+//     slidesToShow: 3,
+//     slidesToScroll: 1,
+//     infinite: true,
+//     dots: false,
+//     responsive: [
+//         {
+//             breakpoint: 992,
+//             settings: {
+//                 centerMode: true,
+//                 centerPadding:'20px',
+//                 slidesToShow: 1,
+//                 slidesToScroll: 1,
+//                 infinite:true,
+//                 dots: false
+//             }
+//         },
+//     ]
+// })
 
 
 
@@ -66,7 +66,7 @@ $('.news_content').slick({
 $('.acordion_card_title').click(function () {
     $(this).parents('.acordion').find('.acordion_card').not($(this).parents('.acordion_card')).removeClass('open')
     $(this).parents('.acordion').find('.acordion_card').not($(this).parents('.acordion_card')).children(".acordion_card_text").hide('200')
-    $(this).parents('.acordion_card').toggleClass('open') 
+    $(this).parents('.acordion_card').toggleClass('open')
     $(this).parent().children('.acordion_card_text').toggle('200')
 })
 
@@ -89,7 +89,7 @@ var send_btn = document.getElementById("send_btn");
 send_btn.addEventListener("click",(e)=>{
     e.preventDefault();
     var liveChat_input = document.getElementById("liveChat_input").value;
-    var html = 
+    var html =
     `
     <div class="liveChat_content_body_item liveChat_content_body_item_user">
         <div class="liveChat_content_body_item_user--cont">

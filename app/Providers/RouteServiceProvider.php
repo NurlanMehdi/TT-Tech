@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = 'admin/tt';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -26,18 +26,44 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->configureRateLimiting();
-
-        $this->routes(function () {
-            Route::prefix('api')
-                ->middleware('api')
-                ->group(base_path('routes/api.php'));
-
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
-        });
+        parent::boot();
+//        $this->configureRateLimiting();
+//
+//        $this->routes(function () {
+//            Route::prefix('api')
+//                ->middleware('api')
+//                ->group(base_path('routes/api.php'));
+//
+//            Route::middleware('web')
+//                ->group(base_path('routes/web.php'));
+//
+//            Route::middleware('admin')
+//                ->group(base_path('routes/admin.php'));
+//        });
     }
 
+    public function map()
+    {
+        $this->mapWebRoutes();
+        $this->mapAdminRoutes();
+    }
+
+    protected function mapWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
+    }
+
+    protected function mapAdminRoutes()
+    {
+        Route::prefix('admin')
+            ->namespace($this->namespace)
+            ->as('admin.')
+            ->middleware(['web'])
+            ->group(base_path('routes/admin.php'));
+
+    }
     /**
      * Configure the rate limiters for the application.
      *

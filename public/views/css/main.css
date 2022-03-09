@@ -55,7 +55,7 @@ li{
 .yellow_btn{
     font-size: 17px;
     line-height: 31px;
-    background-color: #F2DD20;
+    background-color: #fae661;
     color: #2E3A40 ;
     padding: 12px 35px;
     border-radius: 41px;
@@ -183,6 +183,10 @@ li{
 
 .header{
     padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 9999;
 }
 .header_content{
     display: flex;
@@ -204,6 +208,7 @@ li{
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: -2px;
+    margin-right: 20px;
 }
 .header_content_body_navbar_item{
     padding: 0 15px;
@@ -219,28 +224,28 @@ li{
     border-bottom: 2px solid transparent;
 }
 .header_content_body_navbar_item_link.active{
-    border-bottom: 2px solid #F2DD20;
+    border-bottom: 2px solid #2AABE5;
 }
 .header_content_body_navbar_item_link:hover{
-    border-bottom: 2px solid #F2DD20;
+    border-bottom: 2px solid #2AABE5;
 }
 .header_content_body_lang{
     display: flex;
     align-items: center;
 }
 .header_content_body_lang_item{
-    color: #B0BFC7;
+    color: #4e5c63;
     font-size: 13px;
     line-height: 17px;
     text-transform: uppercase;
-    margin: 0 15px;
+    margin: 0 6px;
 }
 .header_content_body_lang_item.active{
     color: #2AABE5;
 }
 
 .header_content_body_search{
-    margin-left: 15px;
+    margin-left: 20px;
     display: flex;
     align-items: center;
     position: relative;
@@ -387,7 +392,7 @@ li{
 }
 
 .mobileHeader_footer{
-    background-color: #F2DD20;
+    background-color: #fcfc5c;
     padding: 20px;
     margin-left: -15px;
     margin-right: -15px;
@@ -587,11 +592,16 @@ li{
 }
 .misvis_content_item_desc{
     overflow: hidden;
+    padding-top: 10px;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-
+.misvis_content_item_image--img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 @media screen and (max-width:992px){
     .misvis{
@@ -617,9 +627,7 @@ li{
 .solutions_header_title{
     width: 50%;
 }
-.solutions_header_head{
-    padding-bottom: 25px;
-}
+
 .solutions_content{
     display: flex;
     flex-wrap: wrap;
@@ -631,14 +639,14 @@ li{
     width: 25%;
     transition: all 0.3s;
 }
-.solutions_content_item:hover .solutions_content_item_text{
-    color: #2AABE5;
-}
-.solutions_content_item:hover .solutions_content_item_body{
-    box-shadow: 0px 0px 11px #0000001C;
-}
+/*.solutions_content_item:hover .solutions_content_item_text{*/
+/*    color: #2AABE5;*/
+/*}*/
+/*.solutions_content_item:hover .solutions_content_item_body{*/
+/*    box-shadow: 0px 0px 11px #0000001C;*/
+/*}*/
 .solutions_content_item:hover .solutions_content_item_body::after{
-    height: 100%;
+    background-color: #F2DD20;
 }
 .solutions_content_item_body{
     margin: 0 15px;
@@ -654,7 +662,7 @@ li{
     content: " ";
     width: 100%;
     height: 21px;
-    background-color: #F2DD20;
+    background-color: #fae661;
     border-radius: 20px;
     position: absolute;
     bottom: 0;
@@ -708,14 +716,14 @@ li{
         height: 50px;
     }
     .solutions_header_head{
-        padding-bottom: 0;
+        padding-bottom: 25px;
     }
     .solutions_content_item_body::after{
-        opacity: 0;
+        height: 12px;
     }
-    .solutions_content_item:hover .solutions_content_item_body::after{
-        opacity: 1;
-    }
+    /*.solutions_content_item:hover .solutions_content_item_body::after{*/
+    /*    opacity: 1;*/
+    /*}*/
 }
 
 
@@ -755,6 +763,7 @@ li{
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    padding-top: 10px;
     -webkit-box-orient: vertical;
 }
 
@@ -1044,6 +1053,7 @@ li{
     color: #4E5C63;
     font-size: 14px;
     line-height: 17px;
+    display: inline-block;
 }
 
 .footer_solutions{
@@ -1056,6 +1066,7 @@ li{
     color: #4E5C63;
     font-size: 13px;
     line-height: 16px;
+    display: inline-block;
 }
 
 .footer_downloadApp{
@@ -1343,7 +1354,6 @@ ul.pageBreadcrumb{
     -webkit-box-orient: vertical;
 }
 
-
 .news{
     overflow: hidden;
     padding: 0 0 65px 0;
@@ -1412,6 +1422,29 @@ ul.pageBreadcrumb{
     -webkit-box-orient: vertical;
 }
 
+/* News first child */
+.news_content_item:first-child{
+    padding-bottom: 50px;
+    flex: 0 0 100%;
+}
+.news_content_item:first-child .news_content_item_cont{
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.news_content_item:first-child .news_content_item_image{
+    width: 50%;
+    border-radius: 15px 0 0px 15px;
+}
+.news_content_item:first-child .news_content_item_body{
+    width: 50%;
+    padding: 40px 30px;
+    border-radius: 0px 15px 15px 0px;
+}
+.news_content_item:first-child .news_content_item_body_desc{
+    -webkit-line-clamp: 6;
+}
+
 
 @media screen and (max-width:992px){
     .blogs_main_cont{
@@ -1433,12 +1466,12 @@ ul.pageBreadcrumb{
     .news_content_item{
         width: 100%;
     }
-    .news_content{
+    /* .news_content{
         margin-left: -30px;
-    }
-    .news_content_item_cont{
+    } */
+    /* .news_content_item_cont{
         padding: 0 10px;
-    }
+    } */
     .news_content_item_body_header{
         font-size: 18px;
         line-height: 24px;
@@ -1447,12 +1480,23 @@ ul.pageBreadcrumb{
     .news_content_item_body_desc,.blogs_main_body_cont_desc{
         margin-bottom: 10px;
     }
+
+    .news_content_item:first-child {
+        padding-bottom: 20px;
+    }
+    .news_content_item:first-child .news_content_item_cont{
+        flex-direction: column;
+    }
+    .news_content_item:first-child .news_content_item_image{
+        width: 100%;
+        border-radius: 15px 15px 0px 0;
+    }
+    .news_content_item:first-child .news_content_item_body{
+        width: 100%;
+        padding: 22px 16px;
+        border-radius: 0px 0px 15px 15px;
+    }
 }
-
-
-
-
-
 
 
 /* PAge Solution Item (Tobacco) */
@@ -1537,7 +1581,7 @@ ul.pageBreadcrumb{
     border-radius: 50%;
     width: 12px;
     height: 12px;
-    display: inline-block; 
+    display: inline-block;
     margin-right: 5px;
 }
 
@@ -1651,7 +1695,7 @@ ul.pageBreadcrumb{
         font-size: 14px;
         line-height: 20px;
     }
-    
+
 }
 
 
