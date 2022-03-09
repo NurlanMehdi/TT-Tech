@@ -33,19 +33,19 @@
                         <a href="{{route('about-page')}}" class="header_content_body_navbar_item_link">{{__('language.aboutUs')}}</a>
                     </li>
                     <li class="header_content_body_navbar_item">
-                        <a href="{{route('solutions-page')}}" class="header_content_body_navbar_item_link">SOLUTIONS</a>
+                        <a href="{{route('solutions-page')}}" class="header_content_body_navbar_item_link">{{__('language.solutions')}}</a>
                     </li>
                     <li class="header_content_body_navbar_item">
-                        <a href="{{route('news-page')}}" class="header_content_body_navbar_item_link">News</a>
+                        <a href="{{route('news-page')}}" class="header_content_body_navbar_item_link">{{__('language.news')}}</a>
                     </li>
                     <li class="header_content_body_navbar_item">
-                        <a href="{{route('mobile-app-page')}}" class="header_content_body_navbar_item_link">Mobile Application</a>
+                        <a href="{{route('mobile-app-page')}}" class="header_content_body_navbar_item_link">{{__('language.mobileApplication')}}</a>
                     </li>
                     <li style="display: none" class="header_content_body_navbar_item">
-                        <a href="support.html" class="header_content_body_navbar_item_link">Support</a>
+                        <a href="support.html" class="header_content_body_navbar_item_link">{{__('language.support')}}</a>
                     </li>
                     <li class="header_content_body_navbar_item">
-                        <a href="{{route('contacts-page')}}" class="header_content_body_navbar_item_link">Contacts</a>
+                        <a href="{{route('contacts-page')}}" class="header_content_body_navbar_item_link">{{__('language.contacts')}}</a>
                     </li>
                 </ul>
                 <div class="header_content_body_lang">
@@ -53,7 +53,7 @@
                     <a href="{{route('changeLang','az')}}" class="header_content_body_lang_item {{(app()->getLocale() === 'az') ? 'active' : ''}}">az</a>
                 </div>
                 <div class="header_content_body_search">
-                    <input type="search" class="header_search_content_form_input" placeholder="Search keyword">
+                    <input type="search" class="header_search_content_form_input" placeholder="{{__('language.search')}}">
                     <a href="#" class="header_content_body_search_link">
                         <img class="header_content_body_search--icon" src="{{asset('views/images/search.png')}}" alt="search icon">
                     </a>
@@ -71,7 +71,7 @@
     <div class="mobileHeader_content">
         <div class="mobileHeader_content_head">
             <div class="mobileHeader_top">
-                <a href="index.html" class="mobileHeader_logo">
+                <a href="{{route('dashboard')}}" class="mobileHeader_logo">
                     <img class="mobileHeader_logo--img" src="{{asset('views/images/TT_logo.svg')}}" alt="blue logo">
                 </a>
                 <div class="mobileHeader_closeBtn">
@@ -80,22 +80,22 @@
             </div>
             <ul class="mobileHeader_navbar acordion">
                 <li class="mobileHeader_navbar_item">
-                    <a href="about.html" class="mobileHeader_navbar_item_link">ABOUT US</a>
+                    <a href="about.html" class="mobileHeader_navbar_item_link">{{__('language.aboutUs')}}</a>
                 </li>
                 <li class="mobileHeader_navbar_item">
-                    <a href="solutions.html" class="mobileHeader_navbar_item_link">SOLUTIONS</a>
+                    <a href="solutions.html" class="mobileHeader_navbar_item_link">{{__('language.solutions')}}</a>
                 </li>
                 <li class="mobileHeader_navbar_item">
-                    <a href="news.html" class="mobileHeader_navbar_item_link">NEWS</a>
+                    <a href="news.html" class="mobileHeader_navbar_item_link">{{__('language.news')}}</a>
                 </li>
                 <li class="mobileHeader_navbar_item">
-                    <a href="mobileApp.html" class="mobileHeader_navbar_item_link">MOBILE APPLICATION</a>
+                    <a href="mobileApp.html" class="mobileHeader_navbar_item_link">{{__('language.mobileApplication')}}</a>
+                </li>
+                <li style="display: none" class="mobileHeader_navbar_item">
+                    <a href="support.html" class="mobileHeader_navbar_item_link">{{__('language.support')}}</a>
                 </li>
                 <li class="mobileHeader_navbar_item">
-                    <a href="support.html" class="mobileHeader_navbar_item_link">SUPPORT</a>
-                </li>
-                <li class="mobileHeader_navbar_item">
-                    <a href="contact.html" class="mobileHeader_navbar_item_link">CONTACTS</a>
+                    <a href="contact.html" class="mobileHeader_navbar_item_link">{{__('language.contacts')}}</a>
                 </li>
             </ul>
         </div>
@@ -139,17 +139,17 @@
                     </div>
                 </div>
                 <div class="mobileHeader_sidebar_lang">
-                    <div class="mobileHeader_sidebar_lang_item active">EN</div>
-                    <div class="mobileHeader_sidebar_lang_item">AZ</div>
+                    <a href="{{route('changeLang','en')}}" class="mobileHeader_sidebar_lang_item {{(app()->getLocale() === 'en') ? 'active' : ''}}">EN</a>
+                    <a href="{{route('changeLang','az')}}" class="mobileHeader_sidebar_lang_item {{(app()->getLocale() === 'az') ? 'active' : ''}}">AZ</a>
                 </div>
             </div>
         </div>
         <div class="mobileHeader_footer">
             <form action="#" class="mobileHeader_footer_search">
                 <button type="submit" class="mobileHeader_footer_search--btn">
-                    <img src="images/search.png" alt="search icon">
+                    <img src="{{asset('views/images/search.png')}}" alt="search icon">
                 </button>
-                <input id="search" type="search" placeholder="Search" class="mobileHeader_footer_search--input">
+                <input id="search" type="search" placeholder="{{__('language.search')}}" class="mobileHeader_footer_search--input">
             </form>
         </div>
     </div>

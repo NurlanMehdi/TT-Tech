@@ -3,6 +3,12 @@
 return [
     'aboutUs' => 'About Us',
     'homepage' => 'Homepage',
+    'solutions' => 'SOLUTIONS',
+    'news' => 'News',
+    'search' => 'Search',
+    'mobileApplication' => 'Mobile Application',
+    'support' => 'Support',
+    'contacts' => 'Contacts',
     'aboutUsDashboardContent1' => 'Technologies LLC is one of the companies offering various solutions in the field of innovative technologies in Azerbaijan.',
     'aboutUsDashboardContent2' => 'Our company, in cooperation with a number of international partners, brings the required innovative technologies to our country. Track and Trace is an online portal for government and business organizations in the country, which allows to track the supply chain from producers to the end consumer. TT Technologies LLC has adapted the system to the requirements of the Azerbaijan State legislation to implement the project by integrating it with other state systems.',
     'missionText' => 'Ensuring transparency of the entire supply chain throughout entire product lifecycle, by  delivering the most comprehensive and effective solutions in Monitoring, Tracking, and Tracing Systems!',
