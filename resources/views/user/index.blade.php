@@ -128,46 +128,49 @@
                 </div>
             </div>
             <div class="solutions_content">
-                <a href="solutionItem.html" class="solutions_content_item">
-                    <div class="solutions_content_item_body">
-                        <div class="solutions_content_item_icon">
-                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-alcohol-1432773.png')}}" alt="alcohol butulka jdnias">
+                @foreach($solutions as $solution)
+                    <a href="{{route('solutionItem',$solution->item_id)}}" class="solutions_content_item">
+                        <div class="solutions_content_item_body">
+                            <div class="solutions_content_item_icon">
+                                <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-alcohol-1432773.png')}}" alt="alcohol butulka jdnias">
+                            </div>
+                            <div class="solutions_content_item_text">
+                                {{$solution->category_name ?? ''}}
+                            </div>
                         </div>
-                        <div class="solutions_content_item_text">
-                            Establishment of the “Track and Trace” System for alcohol products
-                        </div>
-                    </div>
-                </a>
-                <a href="solutionItem.html" class="solutions_content_item">
-                    <div class="solutions_content_item_body">
-                        <div class="solutions_content_item_icon">
-                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-energy-drink-956355.png')}}" alt="alcohol butulka jdnias">
-                        </div>
-                        <div class="solutions_content_item_text">
-                            Establishment of the “Track and Trace” System for alcohol products
-                        </div>
-                    </div>
-                </a>
-                <a href="solutionItem.html" class="solutions_content_item">
-                    <div class="solutions_content_item_body">
-                        <div class="solutions_content_item_icon">
-                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-cigarette-2160822.png')}}" alt="cigaret">
-                        </div>
-                        <div class="solutions_content_item_text">
-                            Establishment of the “Track and Trace” System for alcohol products
-                        </div>
-                    </div>
-                </a>
-                <a href="solutionItem.html" class="solutions_content_item">
-                    <div class="solutions_content_item_body">
-                        <div class="solutions_content_item_icon">
-                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-medicine-4545885.png')}}" alt="Medicine">
-                        </div>
-                        <div class="solutions_content_item_text">
-                            Establishment of the “Track and Trace” System for alcohol products
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                @endforeach
+
+{{--                <a href="solutionItem.html" class="solutions_content_item">--}}
+{{--                    <div class="solutions_content_item_body">--}}
+{{--                        <div class="solutions_content_item_icon">--}}
+{{--                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-energy-drink-956355.png')}}" alt="alcohol butulka jdnias">--}}
+{{--                        </div>--}}
+{{--                        <div class="solutions_content_item_text">--}}
+{{--                            Establishment of the “Track and Trace” System for alcohol products--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <a href="solutionItem.html" class="solutions_content_item">--}}
+{{--                    <div class="solutions_content_item_body">--}}
+{{--                        <div class="solutions_content_item_icon">--}}
+{{--                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-cigarette-2160822.png')}}" alt="cigaret">--}}
+{{--                        </div>--}}
+{{--                        <div class="solutions_content_item_text">--}}
+{{--                            Establishment of the “Track and Trace” System for alcohol products--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <a href="solutionItem.html" class="solutions_content_item">--}}
+{{--                    <div class="solutions_content_item_body">--}}
+{{--                        <div class="solutions_content_item_icon">--}}
+{{--                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-medicine-4545885.png')}}" alt="Medicine">--}}
+{{--                        </div>--}}
+{{--                        <div class="solutions_content_item_text">--}}
+{{--                            Establishment of the “Track and Trace” System for alcohol products--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
             </div>
         </div>
     </div>
@@ -220,84 +223,111 @@
                 </div>
             </div>
             <div class="blogs_content">
-                <div class="blogs_content_item">
-                    <div class="blogs_content_item_cont">
-                        <div class="blogs_content_item_image">
-                            <div class="box pd_t57">
-                                <div class="box_item">
-                                    <img class="blogs_content_item_image--img" src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" alt="blog item image">
+                @foreach($news as $new)
+                    <div class="blogs_content_item">
+                        <div class="blogs_content_item_cont">
+                            <div class="blogs_content_item_image">
+                                <div class="box pd_t57">
+                                    <div class="box_item">
+                                        <img class="blogs_content_item_image--img" src="{!! $new->img !!}" alt="blog item image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blogs_content_item_body">
+                                <div class="blogs_content_item_body_header">
+                                    {{$new->name}}
+                                </div>
+                                <div class="blogs_content_item_body_desc">
+                                    {!! preg_replace("/<img[^>]+\>/i", " ", $new->info) !!}
+                                </div>
+                                <div class="blogs_content_item_body_btn">
+                                    <a href="{{route('news-content-page',$new->item_id)}}" class="btn">
+                                        Read more
+                                        <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="blogs_content_item_body">
-                            <div class="blogs_content_item_body_header">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="blogs_content_item_body_desc">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            </div>
-                            <div class="blogs_content_item_body_btn">
-                                <a href="#" class="btn">
-                                    Read more
-                                    <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">
-                                </a>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <div class="blogs_content_item">
-                    <div class="blogs_content_item_cont">
-                        <div class="blogs_content_item_image">
-                            <div class="box pd_t57">
-                                <div class="box_item">
-                                    <img class="blogs_content_item_image--img" src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" alt="blog item image">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blogs_content_item_body">
-                            <div class="blogs_content_item_body_header">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="blogs_content_item_body_desc">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            </div>
-                            <div class="blogs_content_item_body_btn">
-                                <a href="#" class="btn">
-                                    Read more
-                                    <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="blogs_content_item">
-                    <div class="blogs_content_item_cont">
-                        <div class="blogs_content_item_image">
-                            <div class="box pd_t57">
-                                <div class="box_item">
-                                    <img class="blogs_content_item_image--img" src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" alt="blog item image">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blogs_content_item_body">
-                            <div class="blogs_content_item_body_header">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="blogs_content_item_body_desc">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            </div>
-                            <div class="blogs_content_item_body_btn">
-                                <a href="#" class="btn">
-                                    Read more
-                                    <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+{{--                <div class="blogs_content_item">--}}
+{{--                    <div class="blogs_content_item_cont">--}}
+{{--                        <div class="blogs_content_item_image">--}}
+{{--                            <div class="box pd_t57">--}}
+{{--                                <div class="box_item">--}}
+{{--                                    <img class="blogs_content_item_image--img" src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" alt="blog item image">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="blogs_content_item_body">--}}
+{{--                            <div class="blogs_content_item_body_header">--}}
+{{--                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.--}}
+{{--                            </div>--}}
+{{--                            <div class="blogs_content_item_body_desc">--}}
+{{--                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.--}}
+{{--                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd--}}
+{{--                            </div>--}}
+{{--                            <div class="blogs_content_item_body_btn">--}}
+{{--                                <a href="#" class="btn">--}}
+{{--                                    Read more--}}
+{{--                                    <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="blogs_content_item">--}}
+{{--                    <div class="blogs_content_item_cont">--}}
+{{--                        <div class="blogs_content_item_image">--}}
+{{--                            <div class="box pd_t57">--}}
+{{--                                <div class="box_item">--}}
+{{--                                    <img class="blogs_content_item_image--img" src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" alt="blog item image">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="blogs_content_item_body">--}}
+{{--                            <div class="blogs_content_item_body_header">--}}
+{{--                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.--}}
+{{--                            </div>--}}
+{{--                            <div class="blogs_content_item_body_desc">--}}
+{{--                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.--}}
+{{--                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd--}}
+{{--                            </div>--}}
+{{--                            <div class="blogs_content_item_body_btn">--}}
+{{--                                <a href="#" class="btn">--}}
+{{--                                    Read more--}}
+{{--                                    <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="blogs_content_item">--}}
+{{--                    <div class="blogs_content_item_cont">--}}
+{{--                        <div class="blogs_content_item_image">--}}
+{{--                            <div class="box pd_t57">--}}
+{{--                                <div class="box_item">--}}
+{{--                                    <img class="blogs_content_item_image--img" src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" alt="blog item image">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="blogs_content_item_body">--}}
+{{--                            <div class="blogs_content_item_body_header">--}}
+{{--                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.--}}
+{{--                            </div>--}}
+{{--                            <div class="blogs_content_item_body_desc">--}}
+{{--                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.--}}
+{{--                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd--}}
+{{--                            </div>--}}
+{{--                            <div class="blogs_content_item_body_btn">--}}
+{{--                                <a href="#" class="btn">--}}
+{{--                                    Read more--}}
+{{--                                    <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>

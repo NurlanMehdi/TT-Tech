@@ -5,13 +5,13 @@
         <div class="container-lg">
             <div class="page_head">
                 <div class="page_head--header page_head--header_after">
-                    Xəbərlər
+                    Layihələr
                 </div>
                 <div class="page_head--description">
-                    Xəbər əlavə et
+                    Layihə əlavə et
                 </div>
             </div>
-            <form id="aboutUs" class="section_articleInner_body_content--description" enctype="multipart/form-data" method="post" action="{{route('admin.save-news')}}">
+            <form id="aboutUs" class="section_articleInner_body_content--description" enctype="multipart/form-data" method="post" action="{{route('admin.save-solution-info')}}">
                 {{csrf_field()}}
                 <div class="page_content">
                     <form class="section_articleInner_body_content--description">
@@ -19,50 +19,52 @@
                             <label class="customLabel" for="status">Status</label>
 
                             <select class="customSelect" name="status" id="page_status" required="" title="Status">
-                                <option value="0" {{(($newsData->status ?? '') == '0') ? 'selected' : ''}}>Gizli</option>
-                                <option value="1" {{(($newsData->status ?? '') == '1') ? 'selected' : ''}}>Görünən</option>
+                                <option value="1" {{(($solutionData->status ?? '') == '1') ? 'selected' : ''}}>Görünən</option>
+                                <option value="0" {{(($solutionData->status ?? '') == '0') ? 'selected' : ''}}>Gizli</option>
                             </select>
                         </div>
                         <div class="form-group required">
                             <label class="customLabel" for="language">Dil</label>
-                            <select class="customSelect" {{(($newsData->lang ?? '') != '') ? 'disabled' : ''}} name="language" id="language" required="" title="Dil">
-                                <option value="az" {{(($newsData->lang ?? '') == 'az') ? 'selected' : ''}}>Az</option>
-                                <option value="en" {{(($newsData->lang ?? '') == 'en') ? 'selected' : ''}}>En</option>
+                            <select class="customSelect" {{(($solutionData->lang ?? '') != '') ? 'disabled' : ''}} name="language" id="language" required="" title="Dil">
+                                <option value="az" {{(($solutionData->lang ?? '') == 'az') ? 'selected' : ''}}>Az</option>
+                                <option value="en" {{(($solutionData->lang ?? '') == 'en') ? 'selected' : ''}}>En</option>
                             </select>
                         </div>
                         <div class="form-group required">
-                            <label class="customLabel" for="name">Xəbərin adı</label>
-                            <input class="formControl" name="name" value="{{$newsData->name ?? ''}}" id="title" type="text" placeholder="Xəbərin adı" required="">
+                            <label class="customLabel" for="category_name">Kateqoriya adı</label>
+                            <input class="formControl" name="category_name" value="{{$solutionData->category_name ?? ''}}" id="title" type="text" placeholder="Kateqoriya adı" required="">
                         </div>
                         <div class="form-group required">
+                            <label class="customLabel" for="name">Adı</label>
+                            <input class="formControl" name="name" value="{{$solutionData->name ?? ''}}" id="title" type="text" placeholder="Adı" required="">
+                        </div>
+                        <div class="form-group required">
+                            <label class="customLabel" for="name">Arxa fon şəkili</label>
                             <div class="col-lg-12">
                                 <button class="customBtn quickBtn image_selector" type="button" data-toggle="modal" data-target="#elfinderModal"
                                         data-id="newsImage">
                                     Şəkil seç
                                 </button>
                                 <button class=" customBtn quickBtn quickBtn--minor imageRemove" type="button" data-id="newsImage"
-                                        data-removeId="newsImageRemove" data-show="{{!empty($newsData->img ?? '') ? 'true' : 'false'}}">
+                                        data-removeId="newsImageRemove" data-show="{{!empty($solutionData->back_img ?? '') ? 'true' : 'false'}}">
                                     Şəkli sil
                                 </button>
-                                <img class="elfinderImage" src="{{$newsData->img ?? ''}}" id="newsImagePreview"/>
-                                <input type="hidden" value="{{$newsData->img ?? ''}}"
+                                <img class="elfinderImage" src="{{$solutionData->back_img ?? ''}}" id="newsImagePreview"/>
+                                <input type="hidden" value="{{$solutionData->back_img ?? ''}}"
                                        name="newsImage" id="newsImageInput"
                                        class="form-control" required=""/>
                             </div>
                         </div>
-
                         <div class="form-group required">
-                            <label class="customLabel" for="catagory">Kateqoriya</label>
-                            <select class="customSelect" name="catagory" id="catagory" required="" title="Dil">
-                                <option value="0" {{(($newsData->catagory ?? '') == 'az') ? 'selected' : ''}}>News</option>
-                                <option value="1" {{(($newsData->catagory ?? '') == 'en') ? 'selected' : ''}}>National Legislation</option>
-                            </select>
+                            <label class="customLabel" for="editor">İlkin təsvir</label>
+                            <textarea name="first_info" id="editor">{{$solutionData->first_info ?? ''}}</textarea>
+                        </div>
+                        <div class="form-group required">
+                            <label class="customLabel" for="editor1">Son təsvir</label>
+                            <textarea name="last_info" id="editor1">{{$solutionData->last_info ?? ''}}</textarea>
                         </div>
 
-                        <div class="form-group required">
-                            <label class="customLabel" for="editor">Təsvir</label>
-                            <textarea name="info" id="editor">{{$newsData->info ?? ''}}</textarea>
-                        </div>
+
                         <div class="form-group pt-5">
                             <hr class="mt-5"/>
                             <div class="quickLinks">
@@ -100,7 +102,6 @@
     <link rel="stylesheet" href="{{asset('admin/vendor/elfinder/css/elfinder.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/vendor/elfinder/css/theme.css')}}">
     <script src="{{asset('admin/vendor/elfinder/js/elfinder.min.js')}}"></script>
-
     <script>
         $(document).ready(function () {
             $(document).on('click', '.imageRemove', function () {
@@ -161,15 +162,20 @@
             e.preventDefault();
             e.stopPropagation();
 
-            if({{$newsData->id ?? 0}} > 0 ||'{{$newsData->lang ?? ''}}' != ''){
-                $('#aboutUs').append('<input type="hidden" name="item_id" value="{{$newsData->item_id ?? 0}}">');
-                $('#aboutUs').append('<input type="hidden" name="lang" value="{{$newsData->lang ?? ''}}">');
+            if({{$solutionData->id ?? 0}} > 0 ||'{{$solutionData->lang ?? ''}}' != ''){
+                $('#aboutUs').append('<input type="hidden" name="item_id" value="{{$solutionData->item_id ?? 0}}">');
+                $('#aboutUs').append('<input type="hidden" name="lang" value="{{$solutionData->lang ?? ''}}">');
             }
 
             $('#aboutUs').get(0).submit();
         });
 
         CKEDITOR.replace('editor', {
+            filebrowserImageBrowseUrl: '{{route('elfinder.ckeditor')}}',
+            filebrowserBrowseUrl: '{{route('elfinder.ckeditor')}}'
+        })
+
+        CKEDITOR.replace('editor1', {
             filebrowserImageBrowseUrl: '{{route('elfinder.ckeditor')}}',
             filebrowserBrowseUrl: '{{route('elfinder.ckeditor')}}'
         })

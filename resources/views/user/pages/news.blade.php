@@ -5,15 +5,15 @@
         <div class="container">
             <ul class="pageBreadcrumb">
                 <li class="pageBreadcrumb_item">
-                    <a href="{{route('dashboard')}}" class="pageBreadcrumb_item_link">Homepage</a>
+                    <a href="{{route('dashboard')}}" class="pageBreadcrumb_item_link">{{__('language.homepage')}}</a>
                 </li>
                 <li class="pageBreadcrumb_item">
-                    <a class="pageBreadcrumb_item_link">News</a>
+                    <a class="pageBreadcrumb_item_link">{{__('language.news')}}</a>
                 </li>
             </ul>
             <div class="page_header">
                 <div class="page_header_head">
-                    News
+                    {{__('language.news')}}
                 </div>
             </div>
         </div>
@@ -22,84 +22,37 @@
     <div class="news">
         <div class="container">
             <div class="news_content">
-                <div class="news_content_item">
-                    <div class="news_content_item_cont">
-                        <div class="news_content_item_image">
-                            <div class="box pd_t57">
-                                <div class="box_item">
-                                    <img class="news_content_item_image--img" src="{{asset('views/images/screen_2x.png')}}" alt="blog item image">
+                @foreach($newsData['news'] as $data)
+
+
+                        <div class="news_content_item">
+                            <div class="news_content_item_cont">
+                                <div class="news_content_item_image">
+                                    <div class="box pd_t57">
+                                        <div class="box_item">
+                                            <img class="news_content_item_image--img" src="{{$data->img ?? ''}}" alt="blog item image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news_content_item_body">
+                                    <div class="news_content_item_body_header">
+                                        {{$data->name ?? ''}}
+                                    </div>
+                                    <div class="news_content_item_body_desc">
+                                        {!! preg_replace("/<img[^>]+\>/i", " ", $data->info) !!}
+                                    </div>
+                                    <div class="news_content_item_body_btn">
+                                        <a href="{{route('news-content-page',$data->item_id)}}" class="btn">
+                                            Read more
+                                            <img src="images/blue_arrow_to_right.png" alt="">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="news_content_item_body">
-                            <div class="news_content_item_body_header">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="news_content_item_body_desc">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            </div>
-                            <div class="news_content_item_body_btn">
-                                <a href="newsItem.html" class="btn">
-                                    Read more
-                                    <img src="images/blue_arrow_to_right.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news_content_item">
-                    <div class="news_content_item_cont">
-                        <div class="news_content_item_image">
-                            <div class="box pd_t57">
-                                <div class="box_item">
-                                    <img class="news_content_item_image--img" src="images/alvaro-reyes-qWwpHwip31M-unsplash.png" alt="blog item image">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news_content_item_body">
-                            <div class="news_content_item_body_header">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="news_content_item_body_desc">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            </div>
-                            <div class="news_content_item_body_btn">
-                                <a href="newsItem.html" class="btn">
-                                    Read more
-                                    <img src="images/blue_arrow_to_right.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news_content_item">
-                    <div class="news_content_item_cont">
-                        <div class="news_content_item_image">
-                            <div class="box pd_t57">
-                                <div class="box_item">
-                                    <img class="news_content_item_image--img" src="images/alvaro-reyes-qWwpHwip31M-unsplash.png" alt="blog item image">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news_content_item_body">
-                            <div class="news_content_item_body_header">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="news_content_item_body_desc">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            </div>
-                            <div class="news_content_item_body_btn">
-                                <a href="newsItem.html" class="btn">
-                                    Read more
-                                    <img src="images/blue_arrow_to_right.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+                 @endforeach
             </div>
         </div>
     </div>
@@ -109,39 +62,40 @@
             <div class="section_header">
                 <div class="section_header_cont">
                     <div class="blogs_header_title section_title">National Legislation</div>
-                    <a href="nationalLegislation.html" class="btn">
+                    <a href="{{route('national.legislation.list')}}" class="btn">
                         See more
                         <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="blue arrow to right">
                     </a>
                 </div>
             </div>
             <div class="blogs_content">
-                <div class="blogs_content_item">
-                    <div class="blogs_content_item_cont">
-                        <div class="blogs_content_item_image">
-                            <div class="box pd_t57">
-                                <div class="box_item">
-                                    <img class="blogs_content_item_image--img" src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="blog item image">
+            @foreach($newsData['nationalLegislation'] as $key =>  $data)
+                    <div class="blogs_content_item">
+                        <div class="blogs_content_item_cont">
+                            <div class="blogs_content_item_image">
+                                <div class="box pd_t57">
+                                    <div class="box_item">
+                                        <img class="blogs_content_item_image--img" src="{{$data->img ?? ''}}" alt="blog item image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blogs_content_item_body">
+                                <div class="blogs_content_item_body_header">
+                                    {{$data->name ?? ''}}
+                                </div>
+                                <div class="blogs_content_item_body_desc">
+                                    {!! preg_replace("/<img[^>]+\>/i", " ", $data->info) !!}
+                                </div>
+                                <div class="blogs_content_item_body_btn">
+                                    <a href="{{route('news-content-page',$data->item_id)}}" class="btn">
+                                        Read more
+                                        <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="blogs_content_item_body">
-                            <div class="blogs_content_item_body_header">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <div class="blogs_content_item_body_desc">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                            </div>
-                            <div class="blogs_content_item_body_btn">
-                                <a href="#" class="btn">
-                                    Read more
-                                    <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">
-                                </a>
-                            </div>
-                        </div>
                     </div>
-                </div>
+            @endforeach
             </div>
         </div>
     </div>

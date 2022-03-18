@@ -4,19 +4,19 @@
         <div class="container">
             <ul class="pageBreadcrumb">
                 <li class="pageBreadcrumb_item">
-                    <a href="{{route('dashboard')}}" class="pageBreadcrumb_item_link">Homepage</a>
+                    <a href="{{route('dashboard')}}" class="pageBreadcrumb_item_link">{{__('language.homepage')}}</a>
                 </li>
                 <li class="pageBreadcrumb_item">
-                    <a class="pageBreadcrumb_item_link">Solutions</a>
+                    <a class="pageBreadcrumb_item_link">{{__('language.solutions')}}</a>
                 </li>
             </ul>
             <div class="page_header">
                 <div class="page_header_head">
-                    Solutions
+                    {{__('language.solutions')}}
                 </div>
-                <div class="page_header_desc">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                </div>
+{{--                <div class="page_header_desc">--}}
+{{--                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd--}}
+{{--                </div>--}}
             </div>
         </div>
         <img class="headerCover--img" src="{{asset('views/images/solutions_wallpaper.png')}}" alt="solutions wallpaper">
@@ -29,12 +29,12 @@
                 <div class="externalLink_content_head section_title">
                     User friendly Web Interface of  “Track and Trace” System
                 </div>
-                <div class="externalLink_content_btn">
-                    <a href="#" class="yellow_btn">
-                        Go to portal
-                        <img src="{{asset('views/images/external-link.svg')}}" alt="external-link">
-                    </a>
-                </div>
+{{--                <div class="externalLink_content_btn">--}}
+{{--                    <a href="#" class="yellow_btn">--}}
+{{--                        Go to portal--}}
+{{--                        <img src="{{asset('views/images/external-link.svg')}}" alt="external-link">--}}
+{{--                    </a>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
@@ -47,46 +47,50 @@
                 </div>
             </div>
             <div class="solutions_content">
-                <a href="solutionItem.html" class="solutions_content_item">
-                    <div class="solutions_content_item_body">
-                        <div class="solutions_content_item_icon">
-                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-alcohol-1432773.png')}}" alt="alcohol butulka jdnias">
+            @foreach($solutionData as $solution)
+
+                    <a href="{{route('solutionItem',$solution->item_id)}}" class="solutions_content_item">
+                        <div class="solutions_content_item_body">
+                            <div class="solutions_content_item_icon">
+                                <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-alcohol-1432773.png')}}" alt="alcohol butulka jdnias">
+                            </div>
+                            <div class="solutions_content_item_text">
+                                {{$solution->category_name ?? ''}}
+                            </div>
                         </div>
-                        <div class="solutions_content_item_text">
-                            Establishment of the “Track and Trace” System for alcohol products
-                        </div>
-                    </div>
-                </a>
-                <a href="solutionItem.html" class="solutions_content_item">
-                    <div class="solutions_content_item_body">
-                        <div class="solutions_content_item_icon">
-                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-energy-drink-956355.png')}}" alt="alcohol butulka jdnias">
-                        </div>
-                        <div class="solutions_content_item_text">
-                            Establishment of the “Track and Trace” System for energy drink products
-                        </div>
-                    </div>
-                </a>
-                <a href="solutionItem.html" class="solutions_content_item">
-                    <div class="solutions_content_item_body">
-                        <div class="solutions_content_item_icon">
-                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-cigarette-2160822.png')}}" alt="cigaret">
-                        </div>
-                        <div class="solutions_content_item_text">
-                            Establishment of the “Track and Trace” System for tobacco products
-                        </div>
-                    </div>
-                </a>
-                <a href="solutionItem.html" class="solutions_content_item">
-                    <div class="solutions_content_item_body">
-                        <div class="solutions_content_item_icon">
-                            <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-medicine-4545885.png')}}" alt="Medicine">
-                        </div>
-                        <div class="solutions_content_item_text">
-                            Establishment of the “Track and Trace” System for medicine
-                        </div>
-                    </div>
-                </a>
+                    </a>
+{{--                    <a href="solutionItem.html" class="solutions_content_item">--}}
+{{--                        <div class="solutions_content_item_body">--}}
+{{--                            <div class="solutions_content_item_icon">--}}
+{{--                                <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-energy-drink-956355.png')}}" alt="alcohol butulka jdnias">--}}
+{{--                            </div>--}}
+{{--                            <div class="solutions_content_item_text">--}}
+{{--                                Establishment of the “Track and Trace” System for energy drink products--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="solutionItem.html" class="solutions_content_item">--}}
+{{--                        <div class="solutions_content_item_body">--}}
+{{--                            <div class="solutions_content_item_icon">--}}
+{{--                                <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-cigarette-2160822.png')}}" alt="cigaret">--}}
+{{--                            </div>--}}
+{{--                            <div class="solutions_content_item_text">--}}
+{{--                                Establishment of the “Track and Trace” System for tobacco products--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="solutionItem.html" class="solutions_content_item">--}}
+{{--                        <div class="solutions_content_item_body">--}}
+{{--                            <div class="solutions_content_item_icon">--}}
+{{--                                <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-medicine-4545885.png')}}" alt="Medicine">--}}
+{{--                            </div>--}}
+{{--                            <div class="solutions_content_item_text">--}}
+{{--                                Establishment of the “Track and Trace” System for medicine--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+
+            @endforeach
             </div>
         </div>
     </div>

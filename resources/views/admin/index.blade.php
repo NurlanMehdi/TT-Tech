@@ -49,6 +49,28 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-4">
+                            <div class="section_socialBanner_content_item">
+                                <div class="section_socialBanner_content_item_content">
+                                    <a href="{{route('admin.support')}}" class="section_socialBanner_content_item_content_profile">
+                                        <div class="section_socialBanner_content_item_content_profile--name text-uppercase">
+                                            Dəstək
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="section_socialBanner_content_item">
+                                <div class="section_socialBanner_content_item_content">
+                                    <a href="{{route('admin.contact')}}" class="section_socialBanner_content_item_content_profile">
+                                        <div class="section_socialBanner_content_item_content_profile--name text-uppercase">
+                                            Əlaqə
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 {{--                        <div class="col-lg-4">--}}
 {{--                            <div class="section_socialBanner_content_item">--}}
 {{--                                <div class="section_socialBanner_content_item_content">--}}

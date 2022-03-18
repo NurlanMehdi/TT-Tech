@@ -41,19 +41,12 @@ class AboutController extends Controller
             $data->lang = $lang;
             $data->item_id = $id;
         }
-//        $data = [];
-//        $data = About::get();
-//        dd($data);
-//        if ($id > 0)
-//        {
-//            $data = About::get();
-//        }
+
         return view('admin.pages.addNewAboutInfo',['aboutData'=>$data]);
     }
 
     public function saveAboutInfo()
     {
-
         $validator = validator(request()->all(),[
             'status' => 'nullable|string',
             'language' => 'required|string',

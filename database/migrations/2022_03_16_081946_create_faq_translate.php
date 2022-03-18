@@ -2,10 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateFaqTranslate extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news_translate', function (Blueprint $table) {
+        Schema::create('faq_translate', function (Blueprint $table) {
             $table->id();
             $table->integer('item_id');
-            $table->string('name',1000);
-            $table->string('info',1000);
+            $table->string('question');
+            $table->string('answer');
             $table->string('lang',5);
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_translate');
+        Schema::dropIfExists('faq_translate');
     }
-};
+}

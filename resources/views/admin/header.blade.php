@@ -24,6 +24,12 @@
                     <a href="{{route('admin.news')}}" data-name="Haqqımızda" data-sub-menu="menu_about_us" class="section_header_mainHeader_navbar_link">
                         Xəbərlər
                     </a>
+                    <a href="{{route('admin.support')}}" data-name="Haqqımızda" data-sub-menu="menu_about_us" class="section_header_mainHeader_navbar_link">
+                        Dəstək
+                    </a>
+                    <a href="{{route('admin.contact')}}" data-name="Haqqımızda" data-sub-menu="menu_about_us" class="section_header_mainHeader_navbar_link">
+                        Əlaqə
+                    </a>
                     <a href="{{route('admin.logout.handle')}}" data-name="Çıxış" data-sub-menu="menu_logout" class="section_header_mainHeader_navbar_link">
                         Çıxış
                     </a>
@@ -43,6 +49,16 @@
                     <div class="section_header_mobileNavbar_nav_item">
                         <a href="{{route('admin.news')}}" class="section_header_mobileNavbar_nav_item--link">
                             Xəbərlər
+                        </a>
+                    </div>
+                    <div class="section_header_mobileNavbar_nav_item">
+                        <a href="{{route('admin.support')}}" class="section_header_mobileNavbar_nav_item--link">
+                            Dəstək
+                        </a>
+                    </div>
+                    <div class="section_header_mobileNavbar_nav_item">
+                        <a href="{{route('admin.contact')}}" class="section_header_mobileNavbar_nav_item--link">
+                            Əlaqə
                         </a>
                     </div>
                     <div class="section_header_mobileNavbar_nav_item">

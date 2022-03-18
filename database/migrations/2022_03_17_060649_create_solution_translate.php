@@ -2,10 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateSolutionTranslate extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news_translate', function (Blueprint $table) {
+        Schema::create('solution_translate', function (Blueprint $table) {
             $table->id();
             $table->integer('item_id');
-            $table->string('name',1000);
-            $table->string('info',1000);
-            $table->string('lang',5);
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->string('category_name');
+            $table->string('name');
+            $table->string('first_info');
+            $table->string('last_info');
+            $table->integer('lang');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_translate');
+        Schema::dropIfExists('solution_translate');
     }
-};
+}

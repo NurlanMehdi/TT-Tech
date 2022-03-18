@@ -3,7 +3,7 @@
 return [
     'aboutUs' => 'About Us',
     'homepage' => 'Homepage',
-    'solutions' => 'SOLUTIONS',
+    'solutions' => 'Solutions',
     'news' => 'News',
     'search' => 'Search',
     'mobileApplication' => 'Mobile Application',
@@ -21,4 +21,6 @@ return [
     'forGovernment' => 'Supporting Government',
     'forEnterprenuers' => 'Supporting Enterprenuers',
     'aboutTTT' => 'About TT Technologies',
+    'mobileAppName' => 'Mobile Application',
+    'mobileAppContent' => '“Track and Trace” mobile application is for business entities, as well as for regular consumers. If you are a business entity, just scan the necessary codes through the application – after that, it will automatically go to the system and appear in your personal account. If you are a consumer, you will have an option to scan the marked goods and get the relevant information about the product without a need for a personal account. ',
 ];
