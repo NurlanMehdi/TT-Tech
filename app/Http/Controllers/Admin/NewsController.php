@@ -29,37 +29,115 @@ class NewsController extends Controller
         return view('admin.pages.news',['data'=>$data]);
     }
 
-    public function addNews()
+    public function addNews($id,$key,$lang = '')
     {
-        return view('admin.pages.addNews');
+        if ($key == 'new')
+        {
+            $data = new \stdClass();
+        }elseif ($key == 'edit'){
+            $data = $this->getAboutData($id,$lang);
+        }else{
+            $data = new \stdClass();
+            $data->lang = $lang;
+            $data->item_id = $id;
+        }
+
+        return view('admin.pages.addNews',['newsData'=>$data]);
+    }
+
+    public function getAboutData($id,$lang)
+    {
+        $data = News::select('news_translate.*','news_item.status','news_item.img','news_item.created_at')
+            ->leftJoin('news_translate','news_translate.item_id','=','news_item.id')
+            ->groupBy('item_id')
+            ->where('item_id' ,'=',$id)
+            ->where('news_translate.lang' ,'=',$lang)
+            ->first();
+
+        return $data;
     }
 
     public function saveNews()
     {
-
         $validator = validator(request()->all(),[
             'status' => 'nullable|string',
             'language' => 'required|string',
+            'name' => 'required|string',
+            'newsImage' => 'required|string',
             'catagory' => 'required|integer',
             'info' => 'required|string'
         ]);
 
-        if ($validator->fails()){
-            return redirect()->back()->withErrors($validator)->withInput();
-        }else {
-            $news = new News();
-            $news->status = request()->get('status');
-            $news->catagory = request()->get('catagory');
-            $news->save();
+        if (request()->get('item_id') > 0)
+        {
+            $id = request()->get('item_id');
+            $translate = NewsTranslate::where('item_id',$id)->where('lang',request()->get('lang'))->first();
 
-            $newsTranslate = new NewsTranslate();
-            $newsTranslate->item_id = $news->id;
-            $newsTranslate->info = request()->get('info');
-            $newsTranslate->lang = request()->get('language');
-            $newsTranslate->save();
+            DB::table('news_item')->where('id','=',$id)->update([
+                'status' => request()->get('status'),
+                'catagory' => request()->get('catagory'),
+                'img' => request()->get('newsImage'),
+            ]);
+
+            if ($translate == null){
+                $newsTranslate = new NewsTranslate();
+                $newsTranslate->item_id = $id;
+                $newsTranslate->info = request()->get('info');
+                $newsTranslate->name = request()->get('name');
+                $newsTranslate->lang = request()->get('lang');
+                $newsTranslate->save();
+            }else{
+                DB::table('news_translate')->where('item_id','=',$id)->where('lang','=',request()->get('lang'))->update([
+                    'name' => request()->get('name'),
+                    'info' => request()->get('info')
+                ]);
+            }
+        }else{
+            if ($validator->fails()){
+                return redirect()->back()->withErrors($validator)->withInput();
+            }else {
+                $news = new News();
+                $news->status = request()->get('status');
+                $news->catagory = request()->get('catagory');
+                $news->img = request()->get('newsImage');
+                $news->save();
+
+                $newsTranslate = new NewsTranslate();
+                $newsTranslate->item_id = $news->id;
+                $newsTranslate->info = request()->get('info');
+                $newsTranslate->lang = request()->get('language');
+                $newsTranslate->name = request()->get('name');
+                $newsTranslate->save();
+            }
         }
 
-        return redirect('admin/add-news');
+        return redirect('admin/news');
     }
 
+    public function trashNewsInfo($id)
+    {
+        if (isset($id) && $id > 0){
+            $about = News::where('id',$id)->delete();
+            $aboutT = NewsTranslate::where('item_id',$id)->delete();
+            if ($about && $aboutT)
+            {
+                return redirect('admin/news');
+            }
+        }else{
+            return redirect('admin/news');
+        }
+    }
+
+    public function trashNewsOnlyTranslate($id)
+    {
+        if (isset($id) && $id > 0){
+            $news = NewsTranslate::where('id',$id)->delete();
+            if ($news)
+            {
+                return redirect('admin/news');
+            }
+        }else{
+            return redirect('admin/news');
+        }
+    }
 }

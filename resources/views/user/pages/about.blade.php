@@ -15,9 +15,9 @@
                 <div class="page_header_head">
                     {{__('language.aboutTTT')}}
                 </div>
-                <div class="page_header_desc">
-                    {{__('language.aboutUsDashboardContent2')}}
-                </div>
+{{--                <div class="page_header_desc">--}}
+{{--                    {{__('language.aboutUsDashboardContent2')}}--}}
+{{--                </div>--}}
             </div>
         </div>
         <img class="headerCover--img" src="{{asset('views/images/Creative_Wallpaper_____Direct_light_lines_093129_.png')}}" alt="about us wallpaper">

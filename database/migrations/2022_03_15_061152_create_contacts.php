@@ -2,10 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateContacts extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news_item', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
-            $table->string('img');
-            $table->integer('catagory');
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->string('email');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('map');
+            $table->string('social');
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_item');
+        Schema::dropIfExists('contacts');
     }
-};
+}
