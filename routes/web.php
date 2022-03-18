@@ -35,3 +35,6 @@ Route::get('/lang/{locale}',[LocalizationController::class, 'setLang'])->name('c
 
 //Mail
 Route::post('/mail',[MailController::class,'send'])->name('mail');
+
+//Search
+Route::get('/search',[NewsController::class,'searchPage'])->name('search');

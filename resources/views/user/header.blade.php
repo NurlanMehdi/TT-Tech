@@ -53,10 +53,13 @@
 {{--                    <a href="{{route('changeLang','az')}}" class="header_content_body_lang_item {{(app()->getLocale() === 'az') ? 'active' : ''}}">az</a>--}}
 {{--                </div>--}}
                 <div class="header_content_body_search">
-                    <input type="search" class="header_search_content_form_input" placeholder="{{__('language.search')}}">
-                    <a href="#" class="header_content_body_search_link">
-                        <img class="header_content_body_search--icon" src="{{asset('views/images/search.png')}}" alt="search icon">
-                    </a>
+                    <form action="{{route('search')}}" class="mobileHeader_footer_search">
+                        <input type="search" name="search" class="header_search_content_form_input" placeholder="{{__('language.search')}}">
+                        <a href="#" class="header_content_body_search_link">
+                            <img class="header_content_body_search--icon" src="{{asset('views/images/search.png')}}" alt="search icon">
+                        </a>
+                    </form>
+
                 </div>
             </div>
             <div class="burger">
@@ -145,11 +148,11 @@
             </div>
         </div>
         <div class="mobileHeader_footer">
-            <form action="#" class="mobileHeader_footer_search">
+            <form action="{{route('search')}}" class="mobileHeader_footer_search">
                 <button type="submit" class="mobileHeader_footer_search--btn">
                     <img src="{{asset('views/images/search.png')}}" alt="search icon">
                 </button>
-                <input id="search" type="search" placeholder="{{__('language.search')}}" class="mobileHeader_footer_search--input">
+                <input id="search" name="search" type="search" placeholder="{{__('language.search')}}" class="mobileHeader_footer_search--input">
             </form>
         </div>
     </div>
