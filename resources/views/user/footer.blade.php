@@ -83,7 +83,7 @@ $solutionData = $solutionCont->getSolutionData(app()->getLocale());
                 <ul class="footer_solutions">
                     @foreach($solutionData as $data)
                         <li class="footer_solutions_item">
-                            <a href="{{$data->item_id}}" class="footer_solutions_item_link">{{$data->category_name}}</a>
+                            <a href="{{route('solutionItem',$data->item_id)}}" class="footer_solutions_item_link">{{$data->category_name}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -106,11 +106,11 @@ $solutionData = $solutionCont->getSolutionData(app()->getLocale());
                 </div>
                 <div class="footer_content_item_contact">
                     <div class="footer_title">Phone:</div>
-                    <a href="tel:+994 50 567 67 67" class="footer_content_item_contact_link">{{$social->phone}}</a>
+                    <a href="tel::+{{$social->phone}}" class="footer_content_item_contact_link">{{$social->phone}}</a>
                 </div>
                 <div class="footer_content_item_contact">
                     <div class="footer_title">Address:</div>
-                    <a class="footer_content_item_contact_link">{{$social->address}}</a>
+                    <a href="{{$social->address}}" class="footer_content_item_contact_link">{{$social->address}}</a>
                 </div>
             </div>
         </div>
@@ -123,7 +123,8 @@ $solutionData = $solutionCont->getSolutionData(app()->getLocale());
                 <div class="footer_bottom_content_text">© 2021 {{config('app.name')}}</div>
             </div>
             <div class="footer_bottom_content_right">
-                <a href="#" class="footer_bottom_content_text">Privacy policy</a>
+                <a href="{{route('sitemap')}}" class="footer_bottom_content_text">Site Map</a>
+                <a href="{{route('privacy-policy')}}" class="footer_bottom_content_text">Privacy policy</a>
             </div>
         </div>
     </div>

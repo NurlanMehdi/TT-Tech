@@ -2,7 +2,7 @@
     <div class="container">
         <div class="getInTouch_content">
             <div class="getInTouch_content_header">
-                Learn more about our solutions
+                For more information
             </div>
             <div class="getInTouch_content_btn">
                 <a href="{{route('solutions-page')}}" class="white_btn btn">

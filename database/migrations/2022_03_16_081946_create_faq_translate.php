@@ -17,7 +17,7 @@ class CreateFaqTranslate extends Migration
             $table->id();
             $table->integer('item_id');
             $table->string('question');
-            $table->string('answer');
+            $table->string('answer',2000);
             $table->string('lang',5);
         });
     }

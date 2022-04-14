@@ -88,7 +88,7 @@
                         <div class="misvis_content_item_image">
                             <div class="box pd_t54">
                                 <div class="box_item">
-                                    <img src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" class="misvis_content_item_image--img">
+                                    <img src="{{asset('views/images/shutterstock_1562618884-min.jpg')}}" class="misvis_content_item_image--img">
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                         <div class="misvis_content_item_image">
                             <div class="box pd_t54">
                                 <div class="box_item">
-                                    <img src="{{asset('views/images/alvaro-reyes-qWwpHwip31M-unsplash.png')}}" class="misvis_content_item_image--img">
+                                    <img src="{{asset('views/images/1116 (1).jpg')}}" class="misvis_content_item_image--img">
                                 </div>
                             </div>
                         </div>
@@ -111,6 +111,45 @@
                             {{__('language.visionText')}}
                         </div>
 {{--                    </div>--}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Goverment and Brand -->
+    <div class="governmentAndBrand">
+        <div class="container">
+            <div class="governmentAndBrand_content">
+                <div class="governmentAndBrand_content_item">
+                    <div class="governmentAndBrand_content_item_head section_head">{{__('language.forGovernment')}}</div>
+                    <div class="governmentAndBrand_content_item_image">
+                        <div class="box pd_t54">
+                            <div class="box_item">
+                                <img class="governmentAndBrand_content_item_image--img" src="{{asset('views/images/baku-best-things-to-do.png')}}" alt="government binasi">
+                            </div>
+                        </div>
+                    </div>
+                    {{--                    <div class="governmentAndBrand_content_item_title">--}}
+                    {{--                        User-friendly easy to use portal to track easily all of the products--}}
+                    {{--                    </div>--}}
+                    <div class="governmentAndBrand_content_item_desc section_text">
+                        {{__('language.forGovernmentText')}}
+                    </div>
+                </div>
+                <div class="governmentAndBrand_content_item">
+                    <div class="governmentAndBrand_content_item_head section_head">{{__('language.forEnterprenuers')}} </div>
+                    <div class="governmentAndBrand_content_item_image">
+                        <div class="box pd_t54">
+                            <div class="box_item">
+                                <img class="governmentAndBrand_content_item_image--img" src="{{asset('views/images/Business-Analysis-program.png')}}" alt="government binasi">
+                            </div>
+                        </div>
+                    </div>
+                    {{--                    <div class="governmentAndBrand_content_item_title">--}}
+                    {{--                        User-friendly easy to use portal to track easily all of the products--}}
+                    {{--                    </div>--}}
+                    <div class="governmentAndBrand_content_item_desc section_text">
+                        {{__('language.forEnterprenuersText')}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,7 +171,13 @@
                     <a href="{{route('solutionItem',$solution->item_id)}}" class="solutions_content_item">
                         <div class="solutions_content_item_body">
                             <div class="solutions_content_item_icon">
-                                <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-alcohol-1432773.png')}}" alt="alcohol butulka jdnias">
+                                @if($solution->category_name == 'Alcohol drinks')
+                                    <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-alcohol-1432773.png')}}" alt="alcohol butulka jdnias">
+                                @elseif($solution->category_name == 'Tobacco')
+                                    <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-cigarette-2160822.png')}}" alt="cigaret">
+                                @else
+                                    <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-energy-drink-956355.png')}}" alt="alcohol butulka jdnias">
+                                @endif
                             </div>
                             <div class="solutions_content_item_text">
                                 {{$solution->category_name ?? ''}}
@@ -174,45 +219,7 @@
             </div>
         </div>
     </div>
-    <!-- Goverment and Brand -->
-    <div class="governmentAndBrand">
-        <div class="container">
-            <div class="governmentAndBrand_content">
-                <div class="governmentAndBrand_content_item">
-                    <div class="governmentAndBrand_content_item_head section_head">{{__('language.forGovernment')}}</div>
-                    <div class="governmentAndBrand_content_item_image">
-                        <div class="box pd_t54">
-                            <div class="box_item">
-                                <img class="governmentAndBrand_content_item_image--img" src="{{asset('views/images/baku-best-things-to-do.png')}}" alt="government binasi">
-                            </div>
-                        </div>
-                    </div>
-{{--                    <div class="governmentAndBrand_content_item_title">--}}
-{{--                        User-friendly easy to use portal to track easily all of the products--}}
-{{--                    </div>--}}
-                    <div class="governmentAndBrand_content_item_desc section_text">
-                        {{__('language.forGovernmentText')}}
-                    </div>
-                </div>
-                <div class="governmentAndBrand_content_item">
-                    <div class="governmentAndBrand_content_item_head section_head">{{__('language.forEnterprenuers')}} </div>
-                    <div class="governmentAndBrand_content_item_image">
-                        <div class="box pd_t54">
-                            <div class="box_item">
-                                <img class="governmentAndBrand_content_item_image--img" src="{{asset('views/images/baku-best-things-to-do.png')}}" alt="government binasi">
-                            </div>
-                        </div>
-                    </div>
-{{--                    <div class="governmentAndBrand_content_item_title">--}}
-{{--                        User-friendly easy to use portal to track easily all of the products--}}
-{{--                    </div>--}}
-                    <div class="governmentAndBrand_content_item_desc section_text">
-                        {{__('language.forEnterprenuersText')}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Blogs -->
     <div class="blogs">
         <div class="container">

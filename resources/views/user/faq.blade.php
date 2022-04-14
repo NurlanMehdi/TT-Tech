@@ -3,7 +3,7 @@
         <div class="section_header">
             <div class="faq_header_head section_head">FAQ</div>
             <div class="section_header_cont">
-                <div class="faq_header_title">Commonly asked questions</div>
+                <div class="faq_header_title">COMMONLY ASKED QUESTIONS</div>
             </div>
         </div>
         <div class="faq_content">
@@ -19,7 +19,7 @@
                         <button class="acordion_card_title">{{$faq->question}}</button>
                         <div class="acordion_card_text">
                             <p>
-                                {{$faq->answer}}
+                                {!! $faq->answer !!}
                             </p>
                         </div>
                     </li>

@@ -16,22 +16,30 @@
                     {{__('language.support')}}
                 </div>
             </div>
-            <div class="support_header section_header">
-                <div class="support_header_head section_head">TUTORIAL</div>
-                <div class="section_header_cont">
-                    <div class="support_header_title section_title">User-friendly easy to use portal to track easily all of the products. User-friendly easy to use.</div>
+
+            @if($tutorialVideo->url != "")
+                <div class="support_header section_header">
+                    <div class="support_header_head section_head">TUTORIAL</div>
+                    <div class="section_header_cont">
+                        <div class="support_header_title section_title">User-friendly easy to use portal to track easily all of the products. User-friendly easy to use.</div>
+                    </div>
                 </div>
-            </div>
+                @endif
+
         </div>
     </div>
     <!-- Video -->
-    <div class="page_video">
-        <div class="container">
-            <div class="page_video_content">
-                {!! $tutorialVideo->url ?? '' !!}
+    @if($tutorialVideo->url != "")
+        <div class="page_video">
+            <div class="container">
+                <div class="page_video_content">
+                    <iframe width="100%" height="350px" src="{{$tutorialVideo->url ?? ''}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </div>
             </div>
         </div>
-    </div>
+    @endif
+
     <!-- FAQ -->
     @include('user.faq')
     <!-- Live Chat Section -->

@@ -19,8 +19,8 @@
                             <label class="customLabel" for="status">Status</label>
 
                             <select class="customSelect" name="status" id="page_status" required="" title="Status">
-                                <option value="0" {{(($aboutData->status ?? '') == '0') ? 'selected' : ''}}>Gizli</option>
-                                <option value="1" {{(($aboutData->status ?? '') == '1') ? 'selected' : ''}}>Görünən</option>
+                                <option value="0" {{(($faqData->status ?? '') == '0') ? 'selected' : ''}}>Gizli</option>
+                                <option value="1" {{(($faqData->status ?? '') == '1') ? 'selected' : ''}}>Görünən</option>
                             </select>
                         </div>
                         <div class="form-group required">
@@ -35,9 +35,13 @@
                             <input class="formControl" name="question" value="{{$faqData->question ?? ''}}" id="question" type="text" placeholder="Sual" required="">
                         </div>
                         <div class="form-group required">
-                            <label class="customLabel" for="answer">Cavab</label>
-                            <input class="formControl" name="answer" value="{{$faqData->answer ?? ''}}" id="answer" type="text" placeholder="Cavab" required="">
+                            <label class="customLabel" for="editor">Cavab</label>
+                            <textarea name="answer" id="editor">{{$faqData->answer ?? ''}}</textarea>
                         </div>
+{{--                        <div class="form-group required">--}}
+{{--                            <label class="customLabel" for="answer">Cavab</label>--}}
+{{--                            <input class="formControl" name="answer" value="{{$faqData->answer ?? ''}}" id="answer" type="text" placeholder="Cavab" required="">--}}
+{{--                        </div>--}}
                         <div class="form-group pt-5">
                             <hr class="mt-5"/>
                             <div class="quickLinks">
@@ -69,9 +73,9 @@
             e.preventDefault();
             e.stopPropagation();
 
-            if({{$aboutData->id ?? 0}} > 0 ||'{{$aboutData->lang ?? ''}}' != ''){
-                $('#aboutUs').append('<input type="hidden" name="item_id" value="{{$aboutData->item_id ?? 0}}">');
-                $('#aboutUs').append('<input type="hidden" name="lang" value="{{$aboutData->lang ?? ''}}">');
+            if({{$faqData->id ?? 0}} > 0 ||'{{$faqData->lang ?? ''}}' != ''){
+                $('#aboutUs').append('<input type="hidden" name="item_id" value="{{$faqData->item_id ?? 0}}">');
+                $('#aboutUs').append('<input type="hidden" name="lang" value="{{$faqData->lang ?? ''}}">');
 
             }
 

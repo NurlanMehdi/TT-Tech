@@ -93,12 +93,14 @@ class SupportController extends Controller
 
         if (request()->get('item_id') > 0)
         {
+
             $id = request()->get('item_id');
             $translate = FaqTranslate::where('item_id',$id)->where('lang',request()->get('lang'))->first();
 
             DB::table('faq_item')->where('id','=',$id)->update([
                 'status' => request()->get('status')
             ]);
+
 
             if ($translate == null){
                 $aboutTranslate = new FaqTranslate();

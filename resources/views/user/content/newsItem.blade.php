@@ -31,7 +31,7 @@
         <div class="container">
             <div class="section_header">
                 <div class="section_header_cont">
-                    <div class="blogs_header_title section_title">Next posts</div>
+                    <div class="blogs_header_title section_title">More news</div>
                     <a href="{{route('news-page')}}" class="btn">
                         See more
                         <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="blue arrow to right">

@@ -19,44 +19,47 @@
         </div>
     </div>
     <!-- Blogs -->
+    @if(isset($newsData['news']))
     <div class="news">
         <div class="container">
             <div class="news_content">
                 @foreach($newsData['news'] as $data)
 
 
-                        <div class="news_content_item">
-                            <div class="news_content_item_cont">
-                                <div class="news_content_item_image">
-                                    <div class="box pd_t57">
-                                        <div class="box_item">
-                                            <img class="news_content_item_image--img" src="{{$data->img ?? ''}}" alt="blog item image">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="news_content_item_body">
-                                    <div class="news_content_item_body_header">
-                                        {{$data->name ?? ''}}
-                                    </div>
-                                    <div class="news_content_item_body_desc">
-                                        {!! preg_replace("/<img[^>]+\>/i", " ", $data->info) !!}
-                                    </div>
-                                    <div class="news_content_item_body_btn">
-                                        <a href="{{route('news-content-page',$data->item_id)}}" class="btn">
-                                            Read more
-                                            <img src="images/blue_arrow_to_right.png" alt="">
-                                        </a>
+                    <div class="news_content_item">
+                        <div class="news_content_item_cont">
+                            <div class="news_content_item_image">
+                                <div class="box pd_t57">
+                                    <div class="box_item">
+                                        <img class="news_content_item_image--img" src="{{$data->img ?? ''}}" alt="blog item image">
                                     </div>
                                 </div>
                             </div>
+                            <div class="news_content_item_body">
+                                <div class="news_content_item_body_header">
+                                    {{$data->name ?? ''}}
+                                </div>
+                                <div class="news_content_item_body_desc">
+                                    {!! preg_replace("/<img[^>]+\>/i", " ", $data->info) !!}
+                                </div>
+                                <div class="news_content_item_body_btn">
+                                    <a href="{{route('news-content-page',$data->item_id)}}" class="btn">
+                                        Read more
+                                        <img src="images/blue_arrow_to_right.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
+                    </div>
 
 
-                 @endforeach
+                @endforeach
             </div>
         </div>
     </div>
+    @endif
     <!-- National Legislation -->
+    @if(isset($newsData['nationalLegislation']))
     <div class="blogs">
         <div class="container">
             <div class="section_header">
@@ -69,7 +72,9 @@
                 </div>
             </div>
             <div class="blogs_content">
-            @foreach($newsData['nationalLegislation'] as $key =>  $data)
+
+
+                @foreach($newsData['nationalLegislation'] as $key =>  $data)
                     <div class="blogs_content_item">
                         <div class="blogs_content_item_cont">
                             <div class="blogs_content_item_image">
@@ -95,10 +100,11 @@
                             </div>
                         </div>
                     </div>
-            @endforeach
+                @endforeach
             </div>
         </div>
     </div>
+    @endif
     <!-- Get in touch -->
     @include('user.getInTouch')
 @endsection
