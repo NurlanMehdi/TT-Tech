@@ -28,4 +28,13 @@ class Controller extends BaseController
 
         return view('user.index',['news'=>$newsData,'solutions'=>$solutionData]);
     }
+
+    public function siteMap()
+    {
+        return view('user.pages.siteMap');
+    }
+    public function privacyPolicy()
+    {
+        return view('user.pages.privacyPolicy');
+    }
 }

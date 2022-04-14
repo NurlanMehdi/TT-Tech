@@ -20,7 +20,7 @@
 {{--                </div>--}}
             </div>
         </div>
-        <img class="headerCover--img" src="{{asset('views/images/Creative_Wallpaper_____Direct_light_lines_093129_.png')}}" alt="about us wallpaper">
+        <img class="headerCover--img" src="{{asset('views/images/dataexchangeand.jpg')}}" alt="about us wallpaper">
         <div class="overlay"></div>
     </div>
     <!-- Page About -->

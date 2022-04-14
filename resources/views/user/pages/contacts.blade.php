@@ -22,11 +22,11 @@
                     <ul class="contact_content_cont_ul">
                         <li class="contact_content_cont_ul_li">
                             <span class="contact_content_cont_ul_li_title">Email:</span>
-                            <a href="mailto::office@tttechnologies.az" class="contact_content_cont_ul_li_link">{{$contact->email}}</a>
+                            <a href="mailto::{{$contact->email}}" class="contact_content_cont_ul_li_link">{{$contact->email}}</a>
                         </li>
                         <li class="contact_content_cont_ul_li">
                             <span class="contact_content_cont_ul_li_title">Phone:</span>
-                            <a href="tel:+994 50 567 67 67" class="contact_content_cont_ul_li_link">{{$contact->phone}}</a>
+                            <a href="tel::{{$contact->phone}}" class="contact_content_cont_ul_li_link">{{$contact->phone}}</a>
                         </li>
                         <li class="contact_content_cont_ul_li">
                             <span class="contact_content_cont_ul_li_title">Address:</span>

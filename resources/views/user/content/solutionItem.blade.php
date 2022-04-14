@@ -30,37 +30,37 @@
     <div class="pageAbout">
         <div class="container">
             <div class="pageAbout_content">
-                <div class="pageAbout_content_item">
+{{--                <div class="pageAbout_content_item">--}}
                     {!! $solutionData->first_info !!}
-                </div>
+{{--                </div>--}}
             </div>
         </div>
     </div>
     <!-- PAge info grafik -->
-    <div class="infographic">
-        <div class="container">
-            <div class="section_header">
-                <div class="infographic_header_cont">
-                    <div class="infographic_header_title">How does the procedure go? </div>
-                </div>
-            </div>
-            <div class="infographic_content">
-                <div class="infographic_content_image">
-                    <div class="box pd_t100">
-                        <div class="box_item">
-                            <img class="infographic_content_image--img" src="{{asset('views/images/Group 243.png')}}" alt="solution_infoGraphic">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="infographic">--}}
+{{--        <div class="container">--}}
+{{--            <div class="section_header">--}}
+{{--                <div class="infographic_header_cont">--}}
+{{--                    <div class="infographic_header_title">How does the procedure go? </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="infographic_content">--}}
+{{--                <div class="infographic_content_image">--}}
+{{--                    <div class="box pd_t23">--}}
+{{--                        <div class="box_item">--}}
+{{--                            <img class="infographic_content_image--img" src="{{asset('views/images/infograf.svg')}}" alt="solution_infoGraphic">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="sectionItem">
         <div class="container">
             <div class="sectionItem_content">
-                <div class="sectionItem_content_item">
+{{--                <div class="sectionItem_content_item">--}}
                     {!! $solutionData->last_info !!}
-                </div>
+{{--                </div>--}}
             </div>
         </div>
     </div>

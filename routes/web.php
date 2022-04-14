@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 //    return view('user.index');
 //})->name('dashboard');
 Route::get('/',[Controller::class,'index'])->name('dashboard');
+Route::get('/sitemap',[Controller::class,'siteMap'])->name('sitemap');
+Route::get('/privacy-policy',[Controller::class,'privacyPolicy'])->name('privacy-policy');
 //Header Pages
 Route::get('/about',[ContentPageController::class,'indexAbout'])->name('about-page');
 Route::get('/solutions',[SolutionController::class,'index'])->name('solutions-page');

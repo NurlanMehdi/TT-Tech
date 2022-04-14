@@ -41,6 +41,6 @@ CKEDITOR.editorConfig = function( config ) {
 	config.templates_replaceContent = false;
 
 	// config.removeButtons = 'Styles,Format,Font,FontSize,TextColor,BGColor,About,Flash,HorizontalRule,Smiley,Language,CopyFormatting,RemoveFormat,Bold,Italic,Underline,Strike,Subscript,Superscript,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField';
-	config.contentsCss = ['assets/css/main.css', 'assets/css/fonts.css', 'assets/vendor/bootstrap/css/bootstrap.css'];
+	config.contentsCss = ['/views/css/main.css', 'assets/css/fonts.css', 'assets/vendor/bootstrap/css/bootstrap.css'];
 	config.font_names ="Segoe UI" + config.font_names;
 };

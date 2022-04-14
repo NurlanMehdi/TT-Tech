@@ -3,12 +3,25 @@
  For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 */
 CKEDITOR.addTemplates("default",{imagesPath:CKEDITOR.getUrl(CKEDITOR.plugins.getPath("templates")+"templates/images/"),templates:[
-    {
-        title:"Default Btn",
-        image:"default.png",
-        description:"Body Link description",
-        html:'<a class="customBtn mb-10 r100" href="">Default</a>'
-    },    {
+        {
+            title:"Sag Sekil",
+            image:"default.png",
+            description:"Sagda sekil solda yazi",
+            html:'<div class="pageAbout_content_item"> <div class="pageAbout_content_body"> <div class="pageAbout_content_body_head section_title"> Lorem Ipsum </div><div class="moreInfo_content_body_desc section_text"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </div></div><div class="pageAbout_content_image"><div class="image_dropShadow_2n"> <div class="box pd_t65"> <div class="box_item"><img class="pageAbout_content_image--img" src="images/loose-tobacco-social.png" alt="tobacco img" /></div> </div></div></div></div>'
+        },
+        {
+            title:"Sol Sekil",
+            image:"default.png",
+            description:"Solda sekil sagda yazi",
+            html:'<div class="pageAbout_content_item"> <div class="pageAbout_content_image"><div class="image_dropShadow"> <div class="box pd_t65"> <div class="box_item"> <img class="pageAbout_content_image--img" src="images/loose-tobacco-social.png" alt="tobacco img" /> </div> </div></div></div><div class="pageAbout_content_body"> <div class="pageAbout_content_body_head section_title"> Lorem Ipsum </div><div class="moreInfo_content_body_desc section_text"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </div></div></div>'
+        },
+        {
+            title:"Default Btn",
+            image:"default.png",
+            description:"Body Link description",
+            html:'<a class="customBtn mb-10 r100" href="">Default</a>'
+        },
+        {
         title:"Body Link",
         image:"body.png",
         description:"Body Link description",

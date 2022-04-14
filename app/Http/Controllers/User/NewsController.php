@@ -23,6 +23,7 @@ class NewsController extends Controller
             }
         }
 
+
         return view('user.pages.news',['newsData'=>$news]);
     }
 
@@ -73,6 +74,7 @@ class NewsController extends Controller
                 ->groupBy('item_id')
                 ->where('news_translate.lang' ,'=',$lang)
                 ->where('news_item.status' ,'=',1)
+                ->orderByDesc('id')
                 ->get();
         }else{
             $data = News::select('news_translate.*','news_item.status','news_item.img','news_item.catagory','news_item.created_at')

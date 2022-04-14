@@ -53,7 +53,7 @@
 {{--                    <a href="{{route('changeLang','az')}}" class="header_content_body_lang_item {{(app()->getLocale() === 'az') ? 'active' : ''}}">az</a>--}}
 {{--                </div>--}}
                 <div class="header_content_body_search">
-                    <form action="{{route('search')}}" class="mobileHeader_footer_search">
+                    <form action="{{route('search')}}" class="header_search_form">
                         <input type="search" name="search" class="header_search_content_form_input" placeholder="{{__('language.search')}}">
                         <a href="#" class="header_content_body_search_link">
                             <img class="header_content_body_search--icon" src="{{asset('views/images/search.png')}}" alt="search icon">

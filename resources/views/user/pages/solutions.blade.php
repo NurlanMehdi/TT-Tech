@@ -19,40 +19,64 @@
 {{--                </div>--}}
             </div>
         </div>
-        <img class="headerCover--img" src="{{asset('views/images/solutions_wallpaper.png')}}" alt="solutions wallpaper">
+        <img class="headerCover--img" src="{{asset('views/images/motion-speed-effect-with-city-night.jpg')}}" alt="about us wallpaper">
         <div class="overlay"></div>
     </div>
     <!-- External link  -->
-    <div class="externalLink">
-        <div class="container">
-            <div class="externalLink_content">
-                <div class="externalLink_content_head section_title">
-                    User friendly Web Interface of  “Track and Trace” System
-                </div>
+{{--    <div class="externalLink">--}}
+{{--        <div class="container">--}}
+{{--            <div class="externalLink_content">--}}
+{{--                <div class="externalLink_content_head section_title">--}}
+{{--                    User friendly Web Interface of  “Track and Trace” System--}}
+{{--                </div>--}}
 {{--                <div class="externalLink_content_btn">--}}
 {{--                    <a href="#" class="yellow_btn">--}}
 {{--                        Go to portal--}}
 {{--                        <img src="{{asset('views/images/external-link.svg')}}" alt="external-link">--}}
 {{--                    </a>--}}
 {{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+    <div class="infographic">
+        <div class="container">
+            <div class="section_header">
+                <div class="infographic_header_cont">
+                    <div class="infographic_header_title">How does it work? </div>
+                </div>
+            </div>
+            <div class="infographic_content">
+                <div class="infographic_content_image">
+                    <div class="box pd_t23">
+                        <div class="box_item">
+                            <img class="infographic_content_image--img" src="{{asset('views/images/infograf.svg')}}" alt="solution_infoGraphic">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- Solutions -->
     <div class="solutions">
         <div class="container">
-            <div class="section_header">
-                <div class="section_header_cont">
-                    <div class="solutions_header_title section_title">Our Solutions </div>
-                </div>
-            </div>
+{{--            <div class="section_header">--}}
+{{--                <div class="section_header_cont">--}}
+{{--                    <div class="solutions_header_title section_title">Our Solutions </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="solutions_content">
             @foreach($solutionData as $solution)
 
                     <a href="{{route('solutionItem',$solution->item_id)}}" class="solutions_content_item">
                         <div class="solutions_content_item_body">
                             <div class="solutions_content_item_icon">
-                                <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-alcohol-1432773.png')}}" alt="alcohol butulka jdnias">
+                                @if($solution->category_name == 'Alcohol drinks')
+                                    <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-alcohol-1432773.png')}}" alt="alcohol butulka jdnias">
+                                @elseif($solution->category_name == 'Tobacco')
+                                    <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-cigarette-2160822.png')}}" alt="cigaret">
+                                @else
+                                    <img class="solutions_content_item_icon--img" src="{{asset('views/images/noun-energy-drink-956355.png')}}" alt="alcohol butulka jdnias">
+                                @endif
                             </div>
                             <div class="solutions_content_item_text">
                                 {{$solution->category_name ?? ''}}
@@ -95,32 +119,32 @@
         </div>
     </div>
     <!-- Page About -->
-    <div class="pageAbout">
-        <div class="container">
-            <div class="pageAbout_content">
-                <div class="pageAbout_content_item">
-                    <div class="pageAbout_content_body">
-                        <div class="moreInfo_head section_head">More Info</div>
-                        <div class="pageAbout_content_body_head section_title">
-                            Lorem Ipsum
-                        </div>
-                        <div class="moreInfo_content_body_desc section_text">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                    </div>
-                    <div class="pageAbout_content_image">
-                        <div class="image_dropShadow">
-                            <div class="box pd_t65">
-                                <div class="box_item">
-                                    <img class="pageAbout_content_image--img" src="{{asset('views/images/aboutUs_content_img.png')}}" alt="about us content img">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="pageAbout">--}}
+{{--        <div class="container">--}}
+{{--            <div class="pageAbout_content">--}}
+{{--                <div class="pageAbout_content_item">--}}
+{{--                    <div class="pageAbout_content_body">--}}
+{{--                        <div class="moreInfo_head section_head">More Info</div>--}}
+{{--                        <div class="pageAbout_content_body_head section_title">--}}
+{{--                            Lorem Ipsum--}}
+{{--                        </div>--}}
+{{--                        <div class="moreInfo_content_body_desc section_text">--}}
+{{--                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="pageAbout_content_image">--}}
+{{--                        <div class="image_dropShadow">--}}
+{{--                            <div class="box pd_t65">--}}
+{{--                                <div class="box_item">--}}
+{{--                                    <img class="pageAbout_content_image--img" src="{{asset('views/images/aboutUs_content_img.png')}}" alt="about us content img">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!-- Clients -->
     @include('user.ourClients')
     <!-- Get in touch -->
