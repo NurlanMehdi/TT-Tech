@@ -71,7 +71,7 @@ $solutionData = $solutionCont->getSolutionData(app()->getLocale());
                         <a href="{{route('mobile-app-page')}}" class="footer_content_item_cont_item_link">Mobile Application</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="support.html" class="footer_content_item_cont_item_link">Support</a>
+                        <a href="{{route('support-page')}}" class="footer_content_item_cont_item_link">Support</a>
                     </li>
                     <li class="footer_content_item_cont_item">
                         <a href="{{route('contacts-page')}}" class="footer_content_item_cont_item_link">Contacts</a>
@@ -123,8 +123,8 @@ $solutionData = $solutionCont->getSolutionData(app()->getLocale());
                 <div class="footer_bottom_content_text">© 2021 {{config('app.name')}}</div>
             </div>
             <div class="footer_bottom_content_right">
-                <a href="{{route('sitemap')}}" class="footer_bottom_content_text">Site Map</a>
-                <a href="{{route('privacy-policy')}}" class="footer_bottom_content_text">Privacy policy</a>
+                <!--<a href="{{route('sitemap')}}" class="footer_bottom_content_text">Site Map</a>-->
+                <!--<a href="{{route('privacy-policy')}}" class="footer_bottom_content_text">Privacy policy</a>-->
             </div>
         </div>
     </div>
@@ -132,5 +132,18 @@ $solutionData = $solutionCont->getSolutionData(app()->getLocale());
 <script src="{{asset('views/dist/jquery-3.6.0.min.js')}}"></script>
 <script src="{{asset('views/dist/slick/slick.min.js')}}"></script>
 <script src="{{asset('views/js/main.js')}}"></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/625d0749b0d10b6f3e6e0a72/1g0tm8u60';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
