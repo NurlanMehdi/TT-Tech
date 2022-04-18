@@ -91,7 +91,7 @@ li{
     height: 100%;
 }
 .pd_t23{
-    padding-top: 23%;
+    padding-top: 28%;
 }
 .pd_t30{
     padding-top: 30%;
@@ -529,7 +529,7 @@ li{
 
 .about{
     overflow: hidden;
-    padding: 100px 0 65px 0;
+    padding: 50px 0 65px 0;
 }
 .about_content{
     display: flex;
@@ -1400,7 +1400,7 @@ ul.pageBreadcrumb{
     flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
-    padding-top: 40px;
+    /*padding-top: 40px;*/
 }
 .news_content_item{
     width: 33.3333%;
@@ -1765,6 +1765,10 @@ ul.pageBreadcrumb{
 .nationalLegislation_content_item_body{
     background-color: #F5F6F9;
     padding: 22px 16px;
+    border-radius: 0px 0px 10px 10px;
+    height: 226px;
+    display: flex;
+    flex-direction: column;
 }
 .nationalLegislation_content_item_body_header{
     color: #4E5C63;
