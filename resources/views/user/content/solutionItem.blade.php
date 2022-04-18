@@ -65,7 +65,7 @@
         </div>
     </div>
     <!-- FAQ -->
-    @include('user.faq')
+{{--    @include('user.faq')--}}
     <!-- Clients -->
     @include('user.ourClients')
     <!-- Get in touch -->

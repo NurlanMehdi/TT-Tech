@@ -49,7 +49,7 @@
                 <div class="infographic_content_image">
                     <div class="box pd_t23">
                         <div class="box_item">
-                            <img class="infographic_content_image--img" src="{{asset('views/images/infograf.svg')}}" alt="solution_infoGraphic">
+                            <img class="infographic_content_image--img" src="{{asset('views/images/infographic.svg')}}" alt="solution_infoGraphic">
                         </div>
                     </div>
                 </div>
