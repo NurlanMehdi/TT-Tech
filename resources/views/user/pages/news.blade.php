@@ -26,7 +26,7 @@
                 @foreach($newsData['news'] as $data)
 
 
-                    <div class="news_content_item">
+                    <a target="_blank" href="{{$data->info ?? ''}}" class="news_content_item">
                         <div class="news_content_item_cont">
                             <div class="news_content_item_image">
                                 <div class="box pd_t57">
@@ -37,20 +37,21 @@
                             </div>
                             <div class="news_content_item_body">
                                 <div class="news_content_item_body_header">
-                                    {{$data->name ?? ''}}
+                                    <div class="news_content_item_body_header_head">{{$data->name ?? ''}}</div>
+
                                 </div>
                                 <div class="news_content_item_body_desc">
-                                    {!! preg_replace("/<img[^>]+\>/i", " ", $data->info) !!}
+
                                 </div>
-                                <div class="news_content_item_body_btn">
-                                    <a href="{{route('news-content-page',$data->item_id)}}" class="btn">
-                                        Read more
-                                        <img src="images/blue_arrow_to_right.png" alt="">
-                                    </a>
-                                </div>
+{{--                                <div class="news_content_item_body_btn">--}}
+{{--                                    <a href="{{route('news-content-page',$data->item_id)}}" class="btn">--}}
+{{--                                        Read more--}}
+{{--                                        <img src="images/blue_arrow_to_right.png" alt="">--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
-                    </div>
+                    </a>
 
 
                 @endforeach

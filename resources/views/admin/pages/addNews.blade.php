@@ -58,11 +58,14 @@
                                 <option value="1" {{(($newsData->catagory ?? '') == 'en') ? 'selected' : ''}}>National Legislation</option>
                             </select>
                         </div>
-
                         <div class="form-group required">
-                            <label class="customLabel" for="editor">Təsvir</label>
-                            <textarea name="info" id="editor">{{$newsData->info ?? ''}}</textarea>
+                            <label class="customLabel" for="info">Link</label>
+                            <input class="formControl" name="info" value="{{$newsData->info ?? ''}}" id="title" type="text" placeholder="Link" required="">
                         </div>
+                        <!--<div class="form-group required">-->
+                        <!--    <label class="customLabel" for="editor">Təsvir</label>-->
+                        <!--    <textarea name="info" id="editor">{{$newsData->info ?? ''}}</textarea>-->
+                        <!--</div>-->
                         <div class="form-group pt-5">
                             <hr class="mt-5"/>
                             <div class="quickLinks">
