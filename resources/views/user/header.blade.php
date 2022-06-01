@@ -48,10 +48,10 @@
                         <a href="{{route('contacts-page')}}" class="header_content_body_navbar_item_link">{{__('language.contacts')}}</a>
                     </li>
                 </ul>
-{{--                <div class="header_content_body_lang">--}}
-{{--                    <a href="{{route('changeLang','en')}}" class="header_content_body_lang_item {{(app()->getLocale() === 'en') ? 'active' : ''}}">En</a>--}}
-{{--                    <a href="{{route('changeLang','az')}}" class="header_content_body_lang_item {{(app()->getLocale() === 'az') ? 'active' : ''}}">az</a>--}}
-{{--                </div>--}}
+                <div class="header_content_body_lang">
+                    <a href="{{route('changeLang','en')}}" class="header_content_body_lang_item {{(app()->getLocale() === 'en') ? 'active' : ''}}">En</a>
+                    <a href="{{route('changeLang','az')}}" class="header_content_body_lang_item {{(app()->getLocale() === 'az') ? 'active' : ''}}">az</a>
+                </div>
                 <div class="header_content_body_search">
                     <form action="{{route('search')}}" class="header_search_form">
                         <input type="search" name="search" class="header_search_content_form_input" placeholder="{{__('language.search')}}">
@@ -141,10 +141,10 @@
                         </a>
                     </div>
                 </div>
-{{--                <div class="mobileHeader_sidebar_lang">--}}
-{{--                    <a href="{{route('changeLang','en')}}" class="mobileHeader_sidebar_lang_item {{(app()->getLocale() === 'en') ? 'active' : ''}}">EN</a>--}}
-{{--                    <a href="{{route('changeLang','az')}}" class="mobileHeader_sidebar_lang_item {{(app()->getLocale() === 'az') ? 'active' : ''}}">AZ</a>--}}
-{{--                </div>--}}
+                <div class="mobileHeader_sidebar_lang">
+                    <a href="{{route('changeLang','en')}}" class="mobileHeader_sidebar_lang_item {{(app()->getLocale() === 'en') ? 'active' : ''}}">EN</a>
+                    <a href="{{route('changeLang','az')}}" class="mobileHeader_sidebar_lang_item {{(app()->getLocale() === 'az') ? 'active' : ''}}">AZ</a>
+                </div>
             </div>
         </div>
         <div class="mobileHeader_footer">

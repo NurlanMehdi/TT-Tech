@@ -25,9 +25,18 @@
                         </div>
                         <div class="form-group required">
                             <label class="customLabel" for="language">Dil</label>
-                            <select class="customSelect" {{(($aboutData->lang ?? '') != '') ? 'disabled' : ''}} name="language" id="language" required="" title="Dil">
-                                <option value="az" {{(($aboutData->lang ?? '') == 'az') ? 'selected' : ''}}>Az</option>
-                                <option value="en" {{(($aboutData->lang ?? '') == 'en') ? 'selected' : ''}}>En</option>
+                            <select class="customSelect" {{(($solutionData->lang ?? '') != '') ? 'readonly' : ''}} name="language" id="language" required="" title="Dil">
+                                @if(($solutionData->lang ?? 1)== 'az')
+                                    <option value="az" selected>Az</option>
+                                @elseif(($solutionData->lang ?? 1) == 'en')
+                                    <option value="en" selected>En</option>
+                                @else
+                                    <option value="az">Az</option>
+                                    <option value="en">En</option>
+
+                                @endif
+
+
                             </select>
                         </div>
                         <div class="form-group required">
@@ -41,7 +50,7 @@
                             <input id="aboutImgUpload" name="image" style="visibility:hidden;"  type="file">
                             <br>
 
-                                <img style="display: {{($aboutData->img ?? '') == '' ? 'none' : 'block'}};max-width: 180px;" id="previewImg" src="{{asset('storage/img/'.($aboutData->img ?? ''))}}"  alt="your image" />
+                            <img style="display: {{($aboutData->img ?? '') == '' ? 'none' : 'block'}};max-width: 180px;" id="previewImg" src="{{asset('storage/img/'.($aboutData->img ?? ''))}}"  alt="your image" />
 
 
                         </div>

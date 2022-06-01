@@ -25,9 +25,18 @@
                         </div>
                         <div class="form-group required">
                             <label class="customLabel" for="language">Dil</label>
-                            <select class="customSelect" {{(($solutionData->lang ?? '') != '') ? 'disabled' : ''}} name="language" id="language" required="" title="Dil">
-                                <option value="az" {{(($solutionData->lang ?? '') == 'az') ? 'selected' : ''}}>Az</option>
-                                <option value="en" {{(($solutionData->lang ?? '') == 'en') ? 'selected' : ''}}>En</option>
+                            <select class="customSelect" {{(($solutionData->lang ?? '') != '') ? 'readonly' : ''}} name="language" id="language" required="" title="Dil">
+                                @if(($solutionData->lang ?? 1)== 'az')
+                                    <option value="az" selected>Az</option>
+                                @elseif(($solutionData->lang ?? 1) == 'en')
+                                    <option value="en" selected>En</option>
+                                @else
+                                    <option value="az">Az</option>
+                                    <option value="en">En</option>
+
+                                @endif
+
+
                             </select>
                         </div>
                         <div class="form-group required">
