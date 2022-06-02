@@ -21,38 +21,38 @@
                     <div class="page_header_head">{{__('language.contacts')}}</div>
                     <ul class="contact_content_cont_ul">
                         <li class="contact_content_cont_ul_li">
-                            <span class="contact_content_cont_ul_li_title">Email:</span>
+                            <span class="contact_content_cont_ul_li_title">{{__('language.email')}} :</span>
                             <a href="mailto::{{$contact->email}}" class="contact_content_cont_ul_li_link">{{$contact->email}}</a>
                         </li>
                         <li class="contact_content_cont_ul_li">
-                            <span class="contact_content_cont_ul_li_title">Phone:</span>
+                            <span class="contact_content_cont_ul_li_title">{{__('language.phone')}} :</span>
                             <a href="tel::{{$contact->phone}}" class="contact_content_cont_ul_li_link">{{$contact->phone}}</a>
                         </li>
                         <li class="contact_content_cont_ul_li">
-                            <span class="contact_content_cont_ul_li_title">Address:</span>
+                            <span class="contact_content_cont_ul_li_title">{{__('language.address')}} :</span>
                             <a class="contact_content_cont_ul_li_link">{{$contact->address}}</a>
                         </li>
                     </ul>
                 </div>
                 <div class="contact_content_form">
-                    <div class="contact_content_form_head">Get in touch with us</div>
+                    <div class="contact_content_form_head">{{__('language.getInTouch')}}</div>
                     <form action="{{route('mail')}}" method="POST">
                         {{csrf_field()}}
                         <div class="form_item">
                             <div class="form_item_cont">
                                 <div class="form_item_input">
-                                    <input class="form_item--input" name="fullname" type="text" placeholder="Full Name*" required>
+                                    <input class="form_item--input" name="fullname" type="text" placeholder="{{__('language.fullName')}}*" required>
                                 </div>
                                 <div class="form_item_input">
-                                    <input class="form_item--input" name="email"  type="email" placeholder="Email Adress*" required>
+                                    <input class="form_item--input" name="email"  type="email" placeholder="{{__('language.email')}}*" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form_item">
-                            <textarea name="message" class="form_item_textarea" placeholder="Your message..."></textarea>
+                            <textarea name="message" class="form_item_textarea" placeholder="{{__('language.yourMessage')}}"></textarea>
                         </div>
                         <div class="form_item">
-                            <button class="form_item_btn" type="submit">SUBMIT</button>
+                            <button class="form_item_btn" type="submit">{{__('language.submit')}}</button>
                         </div>
                     </form>
                 </div>

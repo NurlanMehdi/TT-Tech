@@ -56,30 +56,30 @@ $solutionData = $solutionCont->getSolutionData(app()->getLocale());
                 </ul>
             </div>
             <div class="footer_content_item footer_content_item_50">
-                <div class="footer_title">Contents</div>
+                <div class="footer_title">{{__('language.menu')}}</div>
                 <ul class="footer_content_item_cont">
                     <li class="footer_content_item_cont_item">
-                        <a href="{{route('about-page')}}" class="footer_content_item_cont_item_link">About Us</a>
+                        <a href="{{route('about-page')}}" class="footer_content_item_cont_item_link">{{__('language.aboutUs')}}</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="{{route('solutions-page')}}" class="footer_content_item_cont_item_link">Solutions</a>
+                        <a href="{{route('solutions-page')}}" class="footer_content_item_cont_item_link">{{__('language.solutions')}}</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="{{route('news-page')}}" class="footer_content_item_cont_item_link">News</a>
+                        <a href="{{route('news-page')}}" class="footer_content_item_cont_item_link">{{__('language.news')}}</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="{{route('mobile-app-page')}}" class="footer_content_item_cont_item_link">Mobile Application</a>
+                        <a href="{{route('mobile-app-page')}}" class="footer_content_item_cont_item_link">{{__('language.mobileApplication')}}</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="{{route('support-page')}}" class="footer_content_item_cont_item_link">Support</a>
+                        <a href="{{route('support-page')}}" class="footer_content_item_cont_item_link">{{__('language.support')}}</a>
                     </li>
                     <li class="footer_content_item_cont_item">
-                        <a href="{{route('contacts-page')}}" class="footer_content_item_cont_item_link">Contacts</a>
+                        <a href="{{route('contacts-page')}}" class="footer_content_item_cont_item_link">{{__('language.contacts')}}</a>
                     </li>
                 </ul>
             </div>
             <div class="footer_content_item footer_content_item_50">
-                <div class="footer_title">Solutions</div>
+                <div class="footer_title">{{__('language.solutions')}}</div>
                 <ul class="footer_solutions">
                     @foreach($solutionData as $data)
                         <li class="footer_solutions_item">
@@ -101,15 +101,15 @@ $solutionData = $solutionCont->getSolutionData(app()->getLocale());
 {{--            </div>--}}
             <div class="footer_content_item">
                 <div class="footer_content_item_contact">
-                    <div class="footer_title">Email:</div>
+                    <div class="footer_title">{{__('language.email')}} :</div>
                     <a href="mailto::{{$social->email}}" class="footer_content_item_contact_link">{{$social->email}}</a>
                 </div>
                 <div class="footer_content_item_contact">
-                    <div class="footer_title">Phone:</div>
+                    <div class="footer_title">{{__('language.phone')}} :</div>
                     <a href="tel::+{{$social->phone}}" class="footer_content_item_contact_link">{{$social->phone}}</a>
                 </div>
                 <div class="footer_content_item_contact">
-                    <div class="footer_title">Address:</div>
+                    <div class="footer_title">{{__('language.address')}} :</div>
                     <a href="{{$social->address}}" class="footer_content_item_contact_link">{{$social->address}}</a>
                 </div>
             </div>

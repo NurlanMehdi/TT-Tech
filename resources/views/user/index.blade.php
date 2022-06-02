@@ -49,7 +49,7 @@
                     </div>
                     <div class="about_content_body_btn">
                         <a href="{{route('about-page')}}" class="btn">
-                            Read more
+                            {{__('language.readMore')}}
                             <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="blue arrow to right">
                         </a>
                     </div>
@@ -159,9 +159,9 @@
         <div class="container">
             <div class="section_header">
                 <div class="section_header_cont">
-                    <div class="solutions_header_head section_head">Our Solutions</div>
+                    <div class="solutions_header_head section_head">{{__('language.ourSolutions')}}</div>
                     <a href="{{route('solutions-page')}}" class="btn">
-                        See more
+                        {{__('language.readMore')}}
                         <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="blue arrow to right">
                     </a>
                 </div>
@@ -225,8 +225,8 @@
         <div class="container">
             <div class="blogs_header section_header">
                 <div class="blogs_header section_header_cont">
-                    <div class="blogs_header_title section_title">Want to read our updates? </div>
-                    <div class="blogs_header_text section_text">Check out our latest news on the progress of this project.</div>
+                    <div class="blogs_header_title section_title">{{__('language.wantToReadOurUpdates')}} </div>
+                    <div class="blogs_header_text section_text">{{__('language.CheckOutOur')}}</div>
                 </div>
             </div>
             <div class="blogs_content">

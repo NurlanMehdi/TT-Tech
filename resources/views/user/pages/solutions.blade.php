@@ -42,14 +42,21 @@
         <div class="container">
             <div class="section_header">
                 <div class="infographic_header_cont">
-                    <div class="infographic_header_title">How does it work? </div>
+                    <div class="infographic_header_title">{{__('language.HowDoesItWork')}} </div>
                 </div>
             </div>
             <div class="infographic_content">
                 <div class="infographic_content_image">
                     <div class="box pd_t23">
                         <div class="box_item">
-                            <img class="infographic_content_image--img" src="{{asset('views/images/infographic.svg')}}" alt="solution_infoGraphic">
+                            @if(app()->getLocale() === 'en')
+                                <img class="infographic_content_image--img" src="{{asset('views/images/infographic.svg')}}" alt="solution_infoGraphic">
+
+                            @else
+                                <img class="infographic_content_image--img" src="{{asset('views/images/procedure_az.svg')}}" alt="solution_infoGraphic">
+
+                            @endif
+
                         </div>
                     </div>
                 </div>

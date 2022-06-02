@@ -3,7 +3,7 @@
         <div class="section_header">
             <div class="faq_header_head section_head">FAQ</div>
             <div class="section_header_cont">
-                <div class="faq_header_title">COMMONLY ASKED QUESTIONS</div>
+                <div class="faq_header_title">{{__('language.CommonlyAskedQuestions')}}</div>
             </div>
         </div>
         <div class="faq_content">
