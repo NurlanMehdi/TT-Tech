@@ -248,7 +248,7 @@
                                     {!! preg_replace("/<img[^>]+\>/i", " ", $new->info) !!}
                                 </div>
                                 <div class="blogs_content_item_body_btn">
-                                    <a href="{{route('news-content-page',$new->item_id)}}" class="btn">
+                                    <a href="{{$new->info ?? ''}}" class="btn">
                                         Read more
                                         <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">
                                     </a>
