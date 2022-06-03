@@ -249,6 +249,7 @@
                                 </div>
                                 <div class="blogs_content_item_body_btn">
                                     <a href="{{$new->info ?? ''}}" class="btn">
+
                                         Read more
                                         <img src="{{asset('views/images/blue_arrow_to_right.png')}}" alt="">
                                     </a>
